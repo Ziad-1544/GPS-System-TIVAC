@@ -8,7 +8,6 @@
 #define YELLOW_LED 0x0A
 #define GREEN_LED  0x08
 
-void RGB_Output(uint32_t data);
 void LED_SetColor(distance);    //don't forget  distance from gps
 
 #endif
