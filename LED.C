@@ -5,7 +5,7 @@ void RGB_Output(uint32_t data) {
     GPIO_PORTF_DATA_R = data;
 }
 
-void LED_SetColor(u8 distance) {  // Explicitly define distance type
+void LED_SetColor( distance) {  // Explicitly define distance type
     if (distance >= 5) {
         RGB_Output(0x02); // Red LED
     } else if (distance > 0) {
