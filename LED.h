@@ -3,18 +3,12 @@
 
 #include "GPIO_Interface.h"
 
-// LED Pin Definitions (Port F)
-#define LED_RED    GPIO_PIN1       // PF1
-#define LED_BLUE   GPIO_PIN2      // PF2
-#define LED_GREEN  GPIO_PIN3     // PF3
+#define LED_PORT   GPIO_PORTF  // Define LED port
+#define RED_LED    GPIO_PIN1
+#define YELLOW_LED GPIO_PIN2
+#define GREEN_LED  GPIO_PIN3
 
-#define LED_PORT   GPIO_PORTF
+void LED_SetColor(u8 distance);    //don't forget  u8 distance in main
 
-// LED Functions
-void LED_Init(void);                   // Initialize LEDs
-void LED_On(uint8_t led);             // Turn on a specific LED
-void LED_Off(uint8_t led);           // Turn off a specific LED
-void LED_Toggle(uint8_t led);       // Toggle a specific LED
-void LED_SetColor(uint8_t color);  // Set multiple LEDs at once
+#endif
 
-#endif /* LED_H_ */
