@@ -8,7 +8,7 @@
 #define YELLOW_LED GPIO_PIN2
 #define GREEN_LED  GPIO_PIN3
 
-void LED_SetColor(u8 distance);    //don't forget  u8 distance in main
+void LED_SetColor( distance);    //don't forget  distance from gps
 
 #endif
 
