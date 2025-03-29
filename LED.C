@@ -5,21 +5,13 @@ void RGB_Output(uint32_t data) {
     GPIO_PORTF_DATA_R = data;
 }
 
-void LED_SetColor(distance) {
+void LED_SetColor(u8 distance) {  // Explicitly define distance type
     if (distance >= 5) {
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, RED_LED, GPIO_HIGH);
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, YELLOW_LED, GPIO_LOW);
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, GREEN_LED, GPIO_LOW);
-
+        RGB_Output(0x02); // Red LED
     } else if (distance > 0) {
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, RED_LED, GPIO_LOW);
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, YELLOW_LED, GPIO_HIGH);
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, GREEN_LED, GPIO_LOW);
-
+        RGB_Output(0x04); // Yellow LED
     } else {
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, RED_LED, GPIO_LOW);
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, YELLOW_LED, GPIO_LOW);
-        MCAL_GPIO_SetPinValue(GPIO_PORTF, GREEN_LED, GPIO_HIGH);
+        RGB_Output(0x08); // Green LED
     }
 }
 
