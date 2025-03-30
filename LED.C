@@ -11,7 +11,7 @@ void LED_SetColor(distance) {
             RGB_Output(0x02); // Red LED
             break;
         case (distance > 2.5):
-            RGB_Output(0x04); // Yellow LED
+            RGB_Output(0x0A); // Yellow LED
             break;
         case (distance > 0):
             RGB_Output(0x08); // Green LED
