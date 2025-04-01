@@ -16,7 +16,7 @@
 #include <inttypes.h>
 #include <stdarg.h>
 #include <string.h>
-#include "math.h"
+#include <math.h>
 #include "tm4c123gh6pm.h"
 #include "gpio.h"
 #include "systick.h"
@@ -24,9 +24,13 @@
 #include "uart.h"
 #include "gps.h"
 #include "LED.h"
+#include "BIT_MATH_v1.1.h"  
+#include "STD_TYPES_v1.1.h" 
+
 #define PI 3.141592654
 #define F_CPU 80000000  
 #define CSV 1
+#define REGISTER_SIZE 8
 #define Enable_Interrupts()  __asm("CPSIE I")
 #define Disable_Interrupts() __asm("CPSID I")
 
