@@ -6,6 +6,7 @@
 /////           CREATED:28/03/2025     ////////
 ////////////////////////////////////////////// 
 
+#include "microconfig.h"
 #include "led.h"
 
 void RGB_Output(uint32_t data) {
