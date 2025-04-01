@@ -17,8 +17,8 @@
 #define lcd_EntryMode        0x06         
 #define lcd_DisplayOff       0x08          
 #define lcd_DisplayOn        0x0F          
-#define Set5x7FontSize    	 0x20					
-#define four_bit_mode		     0x28					     
+#define Set5x7FontSize     0x20					
+#define four_bit_mode		 0x28					     
 #define first_row            0x80         
 #define second_row           0xC0          
 #define CURSOR_OFF           0x0C					 
