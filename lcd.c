@@ -51,7 +51,7 @@ void lcd_write(LCD_t *lcd, uint8_t c, uint8_t ctrl) {
 }
 
 //........................................................................................... Print a character to LCD.....................................................................................//
-void lcd_char(LCD_t *lcd, char data,uint8_t ctrl) {
+void lcd_char(LCD_t *lcd, char data) {
     lcd_write(lcd, data & 0xF0, RS);
     lcd_write(lcd, data << 4, RS);
     lcd->delayUs(40);
