@@ -7,7 +7,6 @@
 ////////////////////////////////////////////// 
 
 #include "microconfig.h"
-#include "led.h"
 
 void RGB_Output(uint32_t data) {
     // Ensure LEDs are set as outputs before writing data
