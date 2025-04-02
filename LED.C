@@ -14,7 +14,7 @@ void RGB_Output(uint32_t data) {
 }
 
 void LED_SetColor(distance) {
-   void LED_SetColor(int distance) {  
+  
     int category = (distance > 5) * 3 + (distance > 2.5 && distance <= 5) * 2 + (distance > 0 && distance <= 2.5) * 1;
 
     switch (category) {  
