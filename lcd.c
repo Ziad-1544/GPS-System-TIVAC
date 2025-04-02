@@ -1,10 +1,11 @@
 ////////////////////////////////////////////////////
-///////           File:lcd.C              /////////
-///////      Ain Shams University        /////////
-//////     Intro To Embedded Project    /////////
-/////     AUTHOR: Randa Ayman Samir    /////////
-/////           CREATED:1/04/2025     ////////
-////////////////////////////////////////////// 
+///////      Ain Shams University         /////////
+//////     Intro To Embedded Project     /////////
+/////           Layer:  ECUAL           /////////
+////                lcd                /////////
+///         DATE:   01-04-2025        /////////
+//         AUTHOR: Randa Ayman       /////////
+/////////////////////////////////////////////   
 
 #include "microconfig.h"
 
