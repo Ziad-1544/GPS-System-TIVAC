@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////
-///////           File:LED.C              /////////
+///////           File:lcd.C              /////////
 ///////      Ain Shams University        /////////
 //////     Intro To Embedded Project    /////////
 /////     AUTHOR: Randa Ayman Samir    /////////
