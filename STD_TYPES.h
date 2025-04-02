@@ -2,22 +2,73 @@
 ////////      Ain Shams University         /////////
 ///////     Intro To Embedded Project     /////////
 //////           Layer:  LIB             /////////
-/////        Bit Manipulation (BIT)     /////////
+/////        Standard Types (STD)       /////////
 ////         DATE:   16-3-2025         /////////
 ///         version:   1.2            /////////
 //         AUTHOR: Jessica Samuel    /////////
-/////////////////////////////////////////////  
-#ifndef BIT_MATH_H_
-#define BIT_MATH_H_
+///////////////////////////////////////////// 
+#ifndef STD_TYPES_H_
+#define STD_TYPES_H_
 
-#define SET_BIT(reg, bit)    reg |= (1 << bit)
-#define CLR_BIT(reg, bit)    reg &= ~(1 << bit)
-#define TOG_BIT(reg, bit)    reg ^= (1 << bit)
-#define GET_BIT(reg, bit)    ((reg & (1 << bit)) >> bit)
-#define IS_BIT_SET(reg, bit) ((reg & (1 << bit)) >> bit)
-#define IS_BIT_CLR(reg, bit) !((reg & (1 << bit)) >> bit)
+typedef unsigned char u8;
+typedef unsigned short int u16;
+typedef unsigned long int u32;
+typedef unsigned long long int u64;
 
-#define ROR(reg, num)        reg = (reg << (REGISTER_SIZE - num)) | (reg >> num)
-#define ROL(reg, num)        reg = (reg >> (REGISTER_SIZE - num)) | (reg << num)
+typedef signed char s8;
+typedef signed short int s16;
+typedef signed long int s32;
+typedef signed long long int s64;
+
+typedef float f32;
+typedef double f64;
+
+typedef enum {
+    NOK = 1,
+    OK  = 0
+} STD_ERROR;
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
