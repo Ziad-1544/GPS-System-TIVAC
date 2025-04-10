@@ -3,7 +3,7 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  MCAL           /////////
 /////                GPIO              /////////
-////                Version:1.0       /////////
+////                Version:1.1       /////////
 ///         DATE:   4-7-2025         /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
@@ -35,4 +35,7 @@
 #define GPIO_WAIT (*((volatile u32 *)(GPIO_RCC_READY_FOR_ACCESS_ADDRESS)))
 
 
+static STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value);
+static STD_ERROR GPIO_PortUnlock(u32 Port, u8 Copy_Value);
+static STD_ERROR GPIO_PortCommit(u32 Port, u8 Copy_Value);
 #endif 

@@ -3,7 +3,7 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  MCAL           /////////
 /////                GPIO              /////////
-////                Version:1.0       /////////
+////                Version:1.1       /////////
 ///         DATE:   4-7-2025         /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
@@ -13,7 +13,45 @@
 #include "GPIO_Config.h"
 #include "GPIO_Interface.h"
 
-STD_ERROR GPIO_PortUnlock(u32 Port, u8 Copy_Value)
+STD_ERROR GPIO_INIT(u32 Port)
+{
+    STD_ERROR Local_FunctionStatus = NOK;
+    GPIO_PORT_t* Local_Port = NULL;
+    
+    switch(Port) {
+        case PortA: Local_Port = GPIO_PORTA; break;
+        case PortB: Local_Port = GPIO_PORTB; break;
+        case PortC: Local_Port = GPIO_PORTC; break;
+        case PortD: Local_Port = GPIO_PORTD; break;
+        case PortE: Local_Port = GPIO_PORTE; break;
+        case PortF: Local_Port = GPIO_PORTF; break;
+        default: return NOK;
+    }
+    GPIO_ENABLE |= 1 << Port;
+    while ((GPIO_WAIT & 1 << Port) == 0)
+
+    if(GPIO_PortUnlock(Port,PORT_ON))
+        Local_FunctionStatus =NOK;
+    else
+    {
+        Local_FunctionStatus= OK;
+    }
+    if(GPIO_PortCommit(Port,PORT_ON))
+        Local_FunctionStatus =NOK;
+    else
+    {
+        Local_FunctionStatus= OK;
+    }
+    if(GPIO_PortDigitalEnable(Port,PORT_ON))
+        Local_FunctionStatus =NOK;
+    else
+    {
+        Local_FunctionStatus= OK;
+    }
+    return Local_FunctionStatus;
+}
+
+static STD_ERROR GPIO_PortUnlock(u32 Port, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
     GPIO_PORT_t* Local_Port = NULL;
@@ -39,7 +77,7 @@ STD_ERROR GPIO_PortUnlock(u32 Port, u8 Copy_Value)
     return Local_FunctionStatus;
 }
 
-STD_ERROR GPIO_PortCommit(u32 Port, u8 Copy_Value)
+static STD_ERROR GPIO_PortCommit(u32 Port, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
     GPIO_PORT_t* Local_Port = NULL;
@@ -60,7 +98,28 @@ STD_ERROR GPIO_PortCommit(u32 Port, u8 Copy_Value)
     return Local_FunctionStatus;
 }
 
-STD_ERROR GPIO_PinCommit(u32 Port, u8 Copy_PinId, u8 Copy_Value)
+static STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value)
+{
+    STD_ERROR Local_FunctionStatus = NOK;
+    GPIO_PORT_t* Local_Port = NULL;
+    
+    switch(Port) {
+        case PortA: Local_Port = GPIO_PORTA; break;
+        case PortB: Local_Port = GPIO_PORTB; break;
+        case PortC: Local_Port = GPIO_PORTC; break;
+        case PortD: Local_Port = GPIO_PORTD; break;
+        case PortE: Local_Port = GPIO_PORTE; break;
+        case PortF: Local_Port = GPIO_PORTF; break;
+        default: return NOK;
+    }
+    
+    Local_Port->GPIODEN = Copy_Value;
+    Local_FunctionStatus = OK;
+    
+    return Local_FunctionStatus;
+}
+
+/*STD_ERROR GPIO_PinCommit(u32 Port, u8 Copy_PinId, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
     GPIO_PORT_t* Local_Port = NULL;
@@ -88,29 +147,9 @@ STD_ERROR GPIO_PinCommit(u32 Port, u8 Copy_PinId, u8 Copy_Value)
     
     return Local_FunctionStatus;
 }
+*/
 
-STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value)
-{
-    STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
-    
-    switch(Port) {
-        case PortA: Local_Port = GPIO_PORTA; break;
-        case PortB: Local_Port = GPIO_PORTB; break;
-        case PortC: Local_Port = GPIO_PORTC; break;
-        case PortD: Local_Port = GPIO_PORTD; break;
-        case PortE: Local_Port = GPIO_PORTE; break;
-        case PortF: Local_Port = GPIO_PORTF; break;
-        default: return NOK;
-    }
-    
-    Local_Port->GPIODEN = Copy_Value;
-    Local_FunctionStatus = OK;
-    
-    return Local_FunctionStatus;
-}
-
-STD_ERROR GPIO_PinDigitalEnable(u32 Port, u8 Copy_PinId, u8 Copy_Value)
+/*STD_ERROR GPIO_PinDigitalEnable(u32 Port, u8 Copy_PinId, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
     GPIO_PORT_t* Local_Port = NULL;
@@ -137,7 +176,7 @@ STD_ERROR GPIO_PinDigitalEnable(u32 Port, u8 Copy_PinId, u8 Copy_Value)
     Local_FunctionStatus = OK;
     
     return Local_FunctionStatus;
-}
+}*/
 
 STD_ERROR GPIO_SetPinDir(u32 Port, u8 Copy_PinId, u8 Copy_PinDir)
 {

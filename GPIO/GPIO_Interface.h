@@ -3,7 +3,7 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  MCAL           /////////
 /////                GPIO              /////////
-////                Version:1.0       /////////
+////                Version:1.1       /////////
 ///         DATE:   4-7-2025         /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
@@ -92,6 +92,7 @@ typedef enum {
 #define PIN6 6   
 #define PIN7 7      
 
+STD_ERROR GPIO_INIT(u32 Port);
 STD_ERROR GPIO_SetPinDir(u32 Port, u8 Copy_PinId, u8 Copy_PinDir);
 STD_ERROR GPIO_WritePin(u32 Port, u8 Copy_PinId, u8 Copy_PinValue);
 STD_ERROR GPIO_ReadPin(u32 Port, u8 Copy_PinId, u8* Copy_PinReturnValue);
@@ -100,11 +101,8 @@ STD_ERROR GPIO_WritePort(u32 Port, u8 Copy_Value);
 STD_ERROR GPIO_ReadPort(u32 Port, u8* Copy_ReturnValue);
 STD_ERROR GPIO_SetPinAlternateFunction(u32 Port, u8 Copy_PinId, u8 Copy_Value, u8 Copy_AltFunc);
 STD_ERROR GPIO_SetPinPadConfig(u32 Port, u8 Copy_PinId, GPIO_PadConfig_t* Copy_Config);
-STD_ERROR GPIO_PortUnlock(u32 Port, u8 Copy_Value);
-STD_ERROR GPIO_PortCommit(u32 Port, u8 Copy_Value);
-STD_ERROR GPIO_PinCommit(u32 Port, u8 Copy_PinId, u8 Copy_Value);
-STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value);
-STD_ERROR GPIO_PinDigitalEnable(u32 Port, u8 Copy_PinId, u8 Copy_Value);
+//STD_ERROR GPIO_PinCommit(u32 Port, u8 Copy_PinId, u8 Copy_Value);
+//STD_ERROR GPIO_PinDigitalEnable(u32 Port, u8 Copy_PinId, u8 Copy_Value);
 STD_ERROR GPIO_PinAnalogModeSelect(u32 Port, u8 Copy_PinId, u8 Copy_Value);
 
 #endif
