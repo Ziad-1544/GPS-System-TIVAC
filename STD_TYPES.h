@@ -28,6 +28,9 @@ typedef enum {
     OK  = 0
 } STD_ERROR;
 
+#define NULL ((void*)0)
+
+
 #endif
 
 
