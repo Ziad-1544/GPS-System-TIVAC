@@ -1,0 +1,91 @@
+Main Loop Algorithm in Pseudocode:
+1) Initialization
+
+Initialize all GPIO ports (LEDs, switches, CLCD)
+Set mode_variable = 0
+Set other state variables (eg: led_index = 0, blink_speed = 0, paused = 0, count = 0)
+
+
+2) Infinite Loop
+
+while (1):
+    Read input from SW1 (Mode Change)
+    If SW1 is pressed:
+        mode_variable++
+        if mode_variable > 3:
+            mode_variable = 0
+    
+    switch (mode_variable):
+    
+        case 0: // Manual Control Mode
+            Displayon CLCD "Manual Mode" 
+            Read SW2
+            If SW2 pressed:
+                Toggle LED[led_index]
+                Update CLCD: "LED X: ON/OFF"
+                led_index++
+                if led_index > 2:
+                    led_index = 0
+            break;
+
+        case 1: // Auto Toggle Mode
+            Display on CLCD "Auto Toggle Mode"
+            If SW2 is pressed:
+                paused = !paused   // Toggle pause/resume
+            If not paused:
+                Toggle LEDs in sequence (LED1 → LED2 → LED3 → OFF)
+                Delay for timing
+                Update CLCD: "Status: Running"
+            Else:
+                Update CLCD: "Status: Paused"
+            break;
+
+        case 2: // Blink Speed Control
+            Display on CLCD "Blink Mode" 
+            If SW2 is pressed:
+                blink_speed++
+                if blink_speed > 2:
+                    blink_speed = 0
+                Update CLCD: "Speed: Slow/Medium/Fast"
+            Blink all LEDs at blink_speed
+            break;
+
+        case 3: // LED Binary Counter
+            Display on CLCD "Counter Mode" 
+            If SW2 is pressed:
+                count = 0
+            Output count to 3 LEDs as binary (LED1 = LSB)
+            Update CLCD: "Count: X"
+            Delay 1s
+            count++
+            if count > 7:
+                count = 0
+            break;
+
+        default:
+            Turn ON LED4 (error)
+
+
+3) Variables Used
+
+Variable	Purpose
+mode_variable	Tracks current mode (0 to 3)
+led_index	Tracks which LED to toggle manually
+blink_speed	0: Slow, 1: Medium, 2: Fast
+paused	0 or 1 to pause/resume in Auto Mode
+count	3-bit binary counter value (0 to 7)
+
+
+4) Functions/Modules You Might Break This Into
+
+void init_ports();
+
+void read_switches();
+
+void update_CLCD(char* line1, char* line2);
+
+void toggle_led(int index);
+
+void blink_leds(int speed);
+
+void show_binary_on_leds(int count);
