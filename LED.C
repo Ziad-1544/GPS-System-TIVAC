@@ -13,23 +13,23 @@ void RGB_Output(uint32_t data) {
     GPIO_PORTF_DATA_R = data;
 }
 
-void LED_SetColor(distance) {
+//void LED_SetColor(distance) {
   
-    int category = (distance > 5) * 3 + (distance > 2.5 && distance <= 5) * 2 + (distance > 0 && distance <= 2.5) * 1;
+//    int category = (distance > 5) * 3 + (distance > 2.5 && distance <= 5) * 2 + (distance > 0 && distance <= 2.5) * 1;
 
-    switch (category) {  
-        case 3:  
-            RGB_Output(0x02); // Red LED  
-            break;  
-        case 2:  
-            RGB_Output(0x0A); // Yellow LED  
-            break;  
-        case 1:  
-            RGB_Output(0x08); // Green LED  
-            break;  
-        default:  
-            RGB_Output(0x00); // LEDs Off  
-            break;  
+//    switch (category) {  
+   //     case 3:  
+    //        RGB_Output(0x02); // Red LED  
+    //        break;  
+    //    case 2:  
+    //        RGB_Output(0x0A); // Yellow LED  
+   //         break;  
+     //   case 1:  
+     //       RGB_Output(0x08); // Green LED  
+     //       break;  
+     //   default:  
+     //       RGB_Output(0x00); // LEDs Off  
+      //      break;  
     }  
 }
 
