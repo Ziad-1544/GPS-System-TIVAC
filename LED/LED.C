@@ -6,9 +6,15 @@
 /////           CREATED:28/03/2025     ////////
 ////////////////////////////////////////////// 
 
-#include "microconfig.h"
+#include"GPIO_Interface.h"
 
 #include "LED.h"
+
+static void LED_ClearAll(void)
+{
+    GPIO_WritePin(LED_PORT, RED_LED, 0);   // Turn off red
+    GPIO_WritePin(LED_PORT, GREEN_LED, 0); // Turn off green
+}
 
 void LED_ExternalControl(u32 InputPort, u8 InputPin)
 {
