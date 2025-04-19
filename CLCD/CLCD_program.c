@@ -114,8 +114,9 @@ STD_ERROR CLCD_8DATASendString( u8 *str){
     return ret;
 }
 
-void CLCD_voidClearDisplay(){
+void CLCD_ClearDisplay(){
     CLCD_8DataPinssendCommand(1);
+	Systick_DelayIn_ms(2);
 }
 
 
