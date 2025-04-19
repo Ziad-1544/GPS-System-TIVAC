@@ -7,8 +7,9 @@
 ////////////////////////////////////////////// 
 
 #include"GPIO_Interface.h"
+#include "LED_interface.h"
+#include "LED_private.h"
 
-#include "LED.h"
 
 static void LED_ClearAll(void)
 {
