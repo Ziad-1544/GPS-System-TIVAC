@@ -12,7 +12,7 @@
 #include "GPIO_Interface.h"
 
 // Define LED port
-#define LED_PORT   GPIO_PORTF 
+#define LED_PORT   GPIO_PORTC 
 
 #define RED_LED    0x02
 #define YELLOW_LED 0x0A
