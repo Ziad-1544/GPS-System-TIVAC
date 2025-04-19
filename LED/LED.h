@@ -6,8 +6,8 @@
 /////           CREATED:28/03/2025     ////////
 //////////////////////////////////////////////  
 
-#ifndef LED_H_
-#define LED_H_
+#ifndef LED_INTERFACE_H_
+#define LED_INTERFACE_H_
 
 #include "GPIO_Interface.h"
 
