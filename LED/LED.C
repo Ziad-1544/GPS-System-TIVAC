@@ -8,6 +8,7 @@
 
 #include "microconfig.h"
 
+#include "LED.h"
 
 void LED_ExternalControl(u32 InputPort, u8 InputPin)
 {
