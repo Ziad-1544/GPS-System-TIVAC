@@ -8,9 +8,20 @@
 
 #include "microconfig.h"
 
-void RGB_Output(uint32_t data) {
-    // Ensure LEDs are set as outputs before writing data
-    GPIO_PORTF_DATA_R = data;
+
+void LED_ExternalControl(u32 InputPort, u8 InputPin)
+{
+    u8 inputValue;
+    GPIO_ReadPin(InputPort, InputPin, &inputValue);
+
+    if (inputValue)
+    {
+        GPIO_WritePin(LED_PORT, EXTERNAL_LED, 1);  // Turn ON external LED
+    }
+    else
+    {
+        GPIO_WritePin(LED_PORT, EXTERNAL_LED, 0);  // Turn OFF external LED
+    }
 }
 
 //void LED_SetColor(distance) {
