@@ -19,10 +19,10 @@
 STD_ERROR CLCD_8DataPinsInit (void)
 {  
     STD_ERROR ret = NOK;
-    DIO_voidSetPortDirection(DATA_PORT,PORT_OUTPUT);
-	DIO_voidSetPinDirection(CTRL_PORT,ENA,PIN_OUTPUT);
-	DIO_voidSetPinDirection(CTRL_PORT,RW,PIN_OUTPUT);
-	DIO_voidSetPinDirection(CTRL_PORT,RS,PIN_OUTPUT);
+    GPIO_SetPortDir(DATA_PORT,PORT_OUTPUT);
+	GPIO_SetPinDir(CTRL_PORT,ENA,PIN_OUTPUT);
+	GPIO_SetPinDir(CTRL_PORT,RW,PIN_OUTPUT);
+	GPIO_SetPinDir(CTRL_PORT,RS,PIN_OUTPUT);
    
 
         Systick_DelayIn_ms(1);
@@ -40,15 +40,15 @@ STD_ERROR CLCD_8DataPinsInit (void)
 STD_ERROR  CLCD_8DataPinssendCommand( u8 command){
     STD_ERROR ret = NOK;
     //RS    0
-    DIO_voidSetPinValue(CTRL_PORT,RS,PIN_LOW);
+   GPIO_WritePin(CTRL_PORT,RS,PIN_LOW);
     //RW    0
-    DIO_voidSetPinValue(CTRL_PORT,RW,PIN_LOW);
+    GPIO_WritePin(CTRL_PORT,RW,PIN_LOW);
     //SET DATA ->DATA PORT
-    DIO_voidSetPortValue(DATA_PORT, command);
+   GPIO_WritePort(DATA_PORT, command);
     //E     PULSE
-    DIO_voidSetPinValue(CTRL_PORT,ENA,PIN_HIGH);
+    GPIO_WritePin(CTRL_PORT,ENA,PIN_HIGH);
     Systick_DelayIn_ms(1);
-    DIO_voidSetPinValue(CTRL_PORT,ENA,PIN_LOW);
+    GPIO_WritePin(CTRL_PORT,ENA,PIN_LOW);
 
     Systick_DelayIn_ms(2);
 
@@ -62,15 +62,15 @@ STD_ERROR CLCD_8DATASendData(u8 Data){
     STD_ERROR ret = NOK;
 
     //RS    1
-    DIO_voidSetPinValue(CTRL_PORT,RS,PIN_HIGH);
+    GPIO_WritePin(CTRL_PORT,RS,PIN_HIGH);
     //RW    0
-    DIO_voidSetPinValue(CTRL_PORT,RW,PIN_LOW);
+    GPIO_WritePin(CTRL_PORT,RW,PIN_LOW);
     //SET DATA ->DATA PORT
-    DIO_voidSetPortValue(DATA_PORT,Data);
+    GPIO_WritePort(DATA_PORT,Data);
     //E     PULSE
-    DIO_voidSetPinValue(CTRL_PORT,ENA,PIN_HIGH);
+    GPIO_WritePin(CTRL_PORT,ENA,PIN_HIGH);
     Systick_DelayIn_ms(1);
-    DIO_voidSetPinValue(CTRL_PORT,ENA,PIN_LOW);
+    GPIO_WritePin(CTRL_PORT,ENA,PIN_LOW);
     Systick_DelayIn_ms(2);
 
     // Set success
