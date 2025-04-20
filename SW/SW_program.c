@@ -1,20 +1,64 @@
 #include "SW_interface.h"
 #include "SW_private.h"
 #include "SW_config.h"
+#include "SYSTICK_interface.h"
+#include "GPIO_Interface.h"
 
-void SW_Init(void)
+
+
+void SW_Init(u8 Port, u8 Pin, GPIO_ResType_t ResType)
 {
-    SYSCTL_RCGCGPIO_R |= (1 << 3);                   // Enable clock for Port D (bit 3)
-    while ((SYSCTL_PRGPIO_R & (1 << 3)) == 0);       // Wait till Port D is ready
+    GPIO_PadConfig_t padConfig = {
+        .resType = ResType,
+        .lockFlag = GPIO_UNLOCKED,
+        .slewRate = GPIO_SLEW_RATE_DISABLE
+    };
 
-    // No unlock needed for PD0 or PD4
-    GPIO_PORTD_DIR_R &= ~(SW1_BIT | SW2_BIT);        // Set PD4 and PD0 as inputs
-    GPIO_PORTD_PUR_R |= (SW1_BIT | SW2_BIT);         // Enable internal pull-up resistors
-    GPIO_PORTD_DEN_R |= (SW1_BIT | SW2_BIT);         // Enable digital function
+    GPIO_INIT(Port);
+    GPIO_SetPinDir(Port, Pin, PIN_INPUT);
+    GPIO_SetPinPadConfig(Port, Pin, &padConfig);
+    GPIO_PinAnalogModeSelect(Port, Pin, PIN_OFF);
 }
 
-// Read both switches and return their states (active-low logic)
-u8 SW_input(void)
+STD_ERROR SW_GetRawValue(u8 Port, u8 Pin, u8* Copy_PinValue)
 {
-    return GPIO_PORTD_DATA_R & (SW1_BIT | SW2_BIT);  // Return 0x10, 0x01, or both 0x11
+    return GPIO_ReadPin(Port, Pin, Copy_PinValue);
+}
+
+u8 SW_IsPressed(u8 Port, u8 Pin, GPIO_ResType_t ResType)
+{
+    u8 val;
+    GPIO_ReadPin(Port, Pin, &val);
+
+    if (ResType == GPIO_PULL_UP)
+        return (val == 0) ? SW_PRESSED : SW_NOT_PRESSED;
+    else
+        return (val == 1) ? SW_PRESSED : SW_NOT_PRESSED;
+}
+
+// ========== External Switch Support ==========
+
+void EXTSW_Init(u8 Port, u8 Pin)
+{
+    GPIO_PadConfig_t padConfig = {
+        .resType = GPIO_PULL_DOWN,  //pull down for external
+        .lockFlag = GPIO_UNLOCKED,
+        .slewRate = GPIO_SLEW_RATE_DISABLE
+    };
+
+    GPIO_INIT(Port);
+    GPIO_SetPinDir(Port, Pin, PIN_INPUT);
+    GPIO_SetPinPadConfig(Port, Pin, &padConfig);
+    GPIO_PinAnalogModeSelect(Port, Pin, PIN_OFF);
+}
+
+u8 EXTSW_IsPressed(u8 Port, u8 Pin, GPIO_ResType_t ResType)
+{
+    u8 val;
+    GPIO_ReadPin(Port, Pin, &val);
+
+    if (ResType == GPIO_PULL_UP)
+        return (val == 0) ? SW_PRESSED : SW_NOT_PRESSED;
+    else
+        return (val == 1) ? SW_PRESSED : SW_NOT_PRESSED;
 }
