@@ -9,19 +9,24 @@
 #ifndef LED_INTERFACE_H_
 #define LED_INTERFACE_H_
 
-#include "GPIO_Interface.h"
+#include "STD_TYPES.h"
+#include "LED_private.h"
+#include "LED_config.h"
 
-// Define LED port
-#define LED_PORT   GPIO_PORTC 
-
+// LED IDs
 #define RED_LED       0x01  // PC0
 #define GREEN_LED     0x02  // PC1
-#define YELLOW_LED    0x03  
-#define EXTERNAL_LED  0x04 
+#define YELLOW_LED    0x03  // Both PC0 and PC1 ON
+#define EXTERNAL_LED  0x04
 
-void LED_SetColor(distance);    //don't forget  distance from gps
+// LED States
+#define LED_ON   1
+#define LED_OFF  0
 
-void LED_ExternalControl(u32 Port, u8 PinId);
+void LED_InitInternal(void);
+void LED_SetInitialValue(u8 LedID, u8 LedState);
+void LED_InitExternal(u8 Port, u8 Pin);
+STD_ERROR LED_GetStatus(u8 Port, u8 Pin, u8* Status);
+void LED_Toggle(u8 Port, u8 Pin);
 
 #endif
-
