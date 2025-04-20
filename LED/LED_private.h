@@ -2,6 +2,9 @@
 #define LED_PRIVATE_H_
 
 
-static void LED_ClearAll(void);   // Helper function to turn off all RGB LEDs
+#define LED_PORT      PortC
 
-#endif  
+#define RED_LED_PIN     PIN0
+#define GREEN_LED_PIN   PIN1
+
+#endif
