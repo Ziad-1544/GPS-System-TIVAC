@@ -1,8 +1,24 @@
 #ifndef SW_CONFIG_H
 #define SW_CONFIG_H
 
-#define SW_PORT      GPIO_PORTD_BASE   // Using Port D for switches
-#define SW1_BIT      0x10              // PD4 (0b00010000)
-#define SW2_BIT      0x01              // PD0 (0b00000001)
+
+
+// Internal switches (onboard)
+#define SW1_PORT   PortD
+#define SW1_PIN    PIN4
+#define SW1_RES    GPIO_PULL_UP
+
+#define SW2_PORT   PortD
+#define SW2_PIN    PIN0
+#define SW2_RES    GPIO_PULL_UP
+
+// External switches (example on Port E)
+#define EXT_SW1_PORT   PortD
+#define EXT_SW1_PIN    PIN2
+#define EXT_SW1_RES    GPIO_PULL_DOWN
+
+#define EXT_SW2_PORT   PortD
+#define EXT_SW2_PIN    PIN3
+#define EXT_SW2_RES    GPIO_PULL_DOWN
 
 #endif
