@@ -1,10 +1,12 @@
-/*
------>Layer:  HAL
------>SWC:    LCD
------>DATE:   12-4-200
------>VERSION:V1.0.0
------>AUTHOR: Randa Ayman    
-*/
+////////////////////////////////////////////////////
+////////      Ain Shams University        /////////
+///////     Intro To Embedded Project    /////////
+//////           Layer:  HAL            /////////
+/////                CLCD              /////////
+////                Version:1.1       /////////
+///         DATE:   12-4-2025        /////////
+//         AUTHOR: Randa Ayman      /////////
+////////////////////////////////////////////
 
 #ifndef CLCD_PRIVATE_h_
 #define CLCD_PRIVATE_h_
