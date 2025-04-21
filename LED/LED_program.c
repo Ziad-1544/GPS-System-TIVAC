@@ -1,10 +1,12 @@
 ////////////////////////////////////////////////////
-///////           File:LED.C              /////////
-///////      Ain Shams University        /////////
-//////     Intro To Embedded Project    /////////
-/////     AUTHOR: Randa Ayman Samir    /////////
-/////           CREATED:28/03/2025     ////////
-////////////////////////////////////////////// 
+////////      Ain Shams University        /////////
+///////     Intro To Embedded Project    /////////
+//////           Layer:  HAL            /////////
+/////                LED               /////////
+////                Version:1.1       /////////
+///         DATE:   29-3-2025        /////////
+//         AUTHOR: Randa Ayman      /////////
+////////////////////////////////////////////
 
 #include "LED_interface.h"
 #include "LED_private.h"
