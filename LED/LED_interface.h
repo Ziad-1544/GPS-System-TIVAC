@@ -1,10 +1,12 @@
 ////////////////////////////////////////////////////
-///////           File:LED.h              /////////
-///////      Ain Shams University        /////////
-//////     Intro To Embedded Project    /////////
-/////     AUTHOR: Randa Ayman Samir    /////////
-/////           CREATED:28/03/2025     ////////
-//////////////////////////////////////////////  
+////////      Ain Shams University        /////////
+///////     Intro To Embedded Project    /////////
+//////           Layer:  HAL            /////////
+/////                LED               /////////
+////                Version:1.1       /////////
+///         DATE:   29-3-2025        /////////
+//         AUTHOR: Randa Ayman      /////////
+////////////////////////////////////////////
 
 #ifndef LED_INTERFACE_H_
 #define LED_INTERFACE_H_
