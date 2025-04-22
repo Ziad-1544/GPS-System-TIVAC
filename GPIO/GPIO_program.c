@@ -355,8 +355,9 @@ STD_ERROR GPIO_SetPinAlternateFunction(u32 Port, u8 Copy_PinId, u8 Copy_Value, u
     if(Copy_Value == PIN_OFF) {
         CLR_BIT(Local_Port->GPIOAFSEL, Copy_PinId);
     } else {
+        u32 mask;
         SET_BIT(Local_Port->GPIOAFSEL, Copy_PinId);
-        u32 mask = 0xF << (Copy_PinId * 4);  // 4-bit mask for the pin's field safe factor to remove extra bits
+        mask = 0xF << (Copy_PinId * 4);  // 4-bit mask for the pin's field safe factor to remove extra bits
         Local_Port->GPIOPCTL &= ~mask;       // Clear the 4-bit field to avoid bits high because next step in oring  
         Local_Port->GPIOPCTL |= (Copy_AltFunc & 0xF) << (Copy_PinId * 4);  // Set the alternate function
     }

@@ -33,17 +33,7 @@ typedef struct {
     u32 GPIOPCTL; //port control
 } GPIO_PORT_t;
 
-typedef struct {
-    // GPIO_CurrentVal_t currentVal;  // 2mA=0, 4mA=1, 8mA=2
-    GPIO_ResType_t resType;     // Pull-down=0, Pull-up=1
-    GPIO_LockFlag_t lockFlag;    // 0=unlocked, 1=locked
-    GPIO_SlewRate_t slewRate;      // 0=disabled, 1=enabled
-} GPIO_PadConfig_t;
-// typedef enum {
-//     GPIO_CURRENT_2MA = 0,
-//     GPIO_CURRENT_4MA = 1,
-//     GPIO_CURRENT_8MA = 2
-// } GPIO_CurrentVal_t;
+
 
 typedef enum {
     GPIO_PULL_DOWN = 0,
@@ -52,13 +42,26 @@ typedef enum {
 
 typedef enum {
     GPIO_UNLOCKED = 0,
-    GPIO_LOCKED = 1
+    GPIO_LOCKED 
 } GPIO_LockFlag_t;
 
 typedef enum {
     GPIO_SLEW_RATE_DISABLE = 0,
-    GPIO_SLEW_RATE_ENABLE = 1
+    GPIO_SLEW_RATE_ENABLE 
 } GPIO_SlewRate_t;
+
+// typedef enum {
+//     GPIO_CURRENT_2MA = 0,
+//     GPIO_CURRENT_4MA = 1,
+//     GPIO_CURRENT_8MA = 2
+// } GPIO_CurrentVal_t;
+
+typedef struct {
+    // GPIO_CurrentVal_t currentVal;  // 2mA=0, 4mA=1, 8mA=2
+    GPIO_ResType_t resType;     // Pull-down=0, Pull-up=1
+    GPIO_LockFlag_t lockFlag;    // 0=unlocked, 1=locked
+    GPIO_SlewRate_t slewRate;      // 0=disabled, 1=enabled
+} GPIO_PadConfig_t;
 
 //USED FOR BOTH LOCK & COMMIT PORT & ENABLE
 #define PORT_OFF 0X00

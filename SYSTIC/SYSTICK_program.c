@@ -27,9 +27,10 @@ STD_ERROR Systick_DelayInTicks(u32 delay_in_ticks)
 }
 
 STD_ERROR Systick_DelayIn_ms(u32 Copy_Millseconds)
-{
+{   
     STD_ERROR Local_FunctionStatus = OK;
-    for (u32 i = 0; i < Copy_Millseconds; i++)
+    u32 i;
+    for (i = 0; i < Copy_Millseconds; i++)
     {
         Local_FunctionStatus = Systick_DelayInTicks(No_Of_Tick_To_Delay_1ms); // Delay 1 millisecond
         if (Local_FunctionStatus)
@@ -87,3 +88,47 @@ STD_ERROR Systick_DelayIn_us(u32 Copy_Microseconds)
 
     return Local_FunctionStatus;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// u32 Systick_GetElapsedCounts(void)
+// {
+//     static u32 Local_PreviousValue = 0; //Store the previous SysTick timer value 
+//     u32 Local_CurrentValue = STK->VAL;  //Get the current SysTick timer value 
+//     u32 Local_ElapsedTicks;
+//     //Check if the timer has wrapped around (current value is less than the previous value)
+//     if (Local_CurrentValue < Local_PreviousValue)
+//     {
+//         //Calculate elapsed ticks considering timer overflow
+//         Local_ElapsedTicks = Local_PreviousValue - Local_CurrentValue;
+//     }
+//     else
+//     {
+//         //Calculate elapsed ticks without timer overflow 
+//         Local_ElapsedTicks = STK->LOAD - (Local_CurrentValue - Local_PreviousValue);
+//     }
+
+//     //Update the previous value for the next call 
+//     Local_PreviousValue = Local_CurrentValue;
+
+//     return Local_ElapsedTicks;
+// }
