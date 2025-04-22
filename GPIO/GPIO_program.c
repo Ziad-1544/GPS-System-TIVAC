@@ -3,7 +3,7 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  MCAL           /////////
 /////                GPIO              /////////
-////                Version:1.1       /////////
+////                Version:1.2       /////////
 ///         DATE:   4-7-2025         /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
@@ -16,7 +16,7 @@
 STD_ERROR GPIO_INIT(u32 Port)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -54,7 +54,7 @@ STD_ERROR GPIO_INIT(u32 Port)
 static STD_ERROR GPIO_PortUnlock(u32 Port, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -80,7 +80,7 @@ static STD_ERROR GPIO_PortUnlock(u32 Port, u8 Copy_Value)
 static STD_ERROR GPIO_PortCommit(u32 Port, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -101,7 +101,7 @@ static STD_ERROR GPIO_PortCommit(u32 Port, u8 Copy_Value)
 static STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -122,7 +122,7 @@ static STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value)
 /*STD_ERROR GPIO_PinCommit(u32 Port, u8 Copy_PinId, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -152,7 +152,7 @@ static STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value)
 /*STD_ERROR GPIO_PinDigitalEnable(u32 Port, u8 Copy_PinId, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -181,7 +181,7 @@ static STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value)
 STD_ERROR GPIO_SetPinDir(u32 Port, u8 Copy_PinId, u8 Copy_PinDir)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -212,7 +212,7 @@ STD_ERROR GPIO_SetPinDir(u32 Port, u8 Copy_PinId, u8 Copy_PinDir)
 STD_ERROR GPIO_SetPortDir(u32 Port, u8 Copy_DirValue)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -233,7 +233,7 @@ STD_ERROR GPIO_SetPortDir(u32 Port, u8 Copy_DirValue)
 STD_ERROR GPIO_WritePin(u32 Port, u8 Copy_PinId, u8 Copy_PinValue)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -264,7 +264,7 @@ STD_ERROR GPIO_WritePin(u32 Port, u8 Copy_PinId, u8 Copy_PinValue)
 STD_ERROR GPIO_ReadPin(u32 Port, u8 Copy_PinId, u8* Copy_PinReturnValue)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -289,7 +289,7 @@ STD_ERROR GPIO_ReadPin(u32 Port, u8 Copy_PinId, u8* Copy_PinReturnValue)
 STD_ERROR GPIO_WritePort(u32 Port, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -310,7 +310,7 @@ STD_ERROR GPIO_WritePort(u32 Port, u8 Copy_Value)
 STD_ERROR GPIO_ReadPort(u32 Port, u8* Copy_ReturnValue)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -335,7 +335,7 @@ STD_ERROR GPIO_ReadPort(u32 Port, u8* Copy_ReturnValue)
 STD_ERROR GPIO_SetPinAlternateFunction(u32 Port, u8 Copy_PinId, u8 Copy_Value, u8 Copy_AltFunc)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -369,7 +369,7 @@ STD_ERROR GPIO_SetPinAlternateFunction(u32 Port, u8 Copy_PinId, u8 Copy_Value, u
 STD_ERROR GPIO_PinAnalogModeSelect(u32 Port, u8 Copy_PinId, u8 Copy_Value)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -398,7 +398,7 @@ STD_ERROR GPIO_PinAnalogModeSelect(u32 Port, u8 Copy_PinId, u8 Copy_Value)
 STD_ERROR GPIO_SetPinPadConfig(u32 Port, u8 Copy_PinId, GPIO_PadConfig_t* Copy_Config)
 {
     STD_ERROR Local_FunctionStatus = NOK;
-    GPIO_PORT_t* Local_Port = NULL;
+    volatile GPIO_PORT_t* Local_Port = NULL;
     
     switch(Port) {
         case PortA: Local_Port = GPIO_PORTA; break;
@@ -500,7 +500,7 @@ STD_ERROR GPIO_SetPinPadConfig(u32 Port, u8 Copy_PinId, GPIO_PadConfig_t* Copy_C
 // STD_ERROR GPIO_WriteMaskedPins(u32 Port, u8 Copy_Value, u8 Copy_Mask)
 // {
 //     STD_ERROR Local_FunctionStatus = NOK;
-//     GPIO_PORT_t* Local_Port = NULL;
+//     volatile GPIO_PORT_t* Local_Port = NULL;
 //     u32 Local_Temp;
     
 //     switch(Port) {
@@ -525,7 +525,7 @@ STD_ERROR GPIO_SetPinPadConfig(u32 Port, u8 Copy_PinId, GPIO_PadConfig_t* Copy_C
 // STD_ERROR GPIO_ReadMaskedPins(u32 Port, u8 Copy_Mask, u8* Copy_ReturnValue)
 // {
 //     STD_ERROR Local_FunctionStatus = NOK;
-//     GPIO_PORT_t* Local_Port = NULL;
+//     volatile GPIO_PORT_t* Local_Port = NULL;
     
 //     switch(Port) {
 //         case PortA: Local_Port = GPIO_PORTA; break;
