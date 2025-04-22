@@ -3,8 +3,8 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version:1.0                         /////////
-///          DATE:   4-19-2025                     /////////
+////            Version:1.1                         /////////
+///          DATE:   4-2-2025                      /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
@@ -12,6 +12,8 @@
 #define UART_PRVT_H
 #include "STD_TYPES.h"
 #include "UART_interface.h"
+
+
 
 #define UARTSystemClock 16000000.0
 
@@ -61,7 +63,7 @@
 #define UARTEnable (*((volatile u32 *) (UART_RCC_ENABLE_BASE_ADDRESS)))
 #define UARTReady (*((volatile u32 *) UART_PRUART_BASE_ADDRESS))
 
-static STD_ERROR UARTGPIO_CC( UARTConfig *config);
+//static STD_ERROR UARTGPIO_CC( UARTConfig *config); // No need for declaring the prototype first in private, just defining the function in .c is enough.
 
 
 #endif

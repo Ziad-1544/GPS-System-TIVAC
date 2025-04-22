@@ -3,15 +3,16 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version:1.0                         /////////
-///          DATE:   4-19-2025                     /////////
+////            Version:1.1                         /////////
+///          DATE:   4-2-2025                      /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
 #include "BIT_MATH.h"
 #include "STD_TYPES.h"
-#include "UART_interface.h"
 #include "GPIO_Interface.h"
+#include "UART_interface.h"
+
 
 
 static STD_ERROR UARTGPIO_CC( UARTConfig *config){
@@ -145,10 +146,12 @@ static STD_ERROR UARTGPIO_CC( UARTConfig *config){
 
 STD_ERROR UART_INIT(UARTConfig *config){
     STD_ERROR Local_FunctionStatus = OK;
-    UARTGPIO_CC(config);
+    
+		f32 ClockDivisor ; // pre-define for KEIL 4 error handling
+		UARTGPIO_CC(config);
     
     // Setting Up Baud Rate
-    f32 ClockDivisor = (UARTSystemClock) / (16 * config->BaudRate); // Known formula for calculating Baud Rate
+    ClockDivisor = (UARTSystemClock) / (16 * config->BaudRate); // Known formula for calculating Baud Rate
 
     config->Module->IBRD = (u32)ClockDivisor; // Type casting the clockdivisor to remove the decimal
     config->Module->FBRD = (u32)(((ClockDivisor - (u32)ClockDivisor)*64) + 0.5); // Known formula
@@ -212,6 +215,6 @@ STD_ERROR UART_ReceiveByte(UARTConfig *config, u8 *ptr_u8Data){
     while(IS_BIT_SET(config->Module->FR, UART_FR_RXFEBIT)) {};
 
     Local_FunctionStatus = OK;
-    *ptr_u8Data = (config->Module->DR && 0x000000FF);
+    *ptr_u8Data = (config->Module->DR & 0x000000FF); // BITWISE AND
     return Local_FunctionStatus;
 }

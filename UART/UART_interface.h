@@ -3,23 +3,17 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version:1.0                         /////////
-///          DATE:   4-19-2025                     /////////
+////            Version:1.1                         /////////
+///          DATE:   4-2-2025                      /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
 #ifndef UART_INTERFACE_H
 #define UART_INTERFACE_H
+
 #include "UART_private.h"
 #include "UART_config.h"
 #include "STD_TYPES.h"
-
-
-
-
-
-
-
 
 typedef enum{
     DataBits5 = UART_LCRH_WLEN_5, // 5 data bits
@@ -51,7 +45,7 @@ typedef struct{
     {
         volatile u32 RSR;  // Error clear / Receive status
         volatile u32 ECR;  // Error clear / Receive status
-    };
+    }UART_StatusReg; /*NAMING THE UNION IS MANDATORY IN KEIL 4*/
     
     volatile u32 reserve[4];
     volatile u32 FR;  // UART Flag Register
