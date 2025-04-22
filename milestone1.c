@@ -1,10 +1,10 @@
 
 
-// initialize GPIO, LEDs and LCD
+#include <stdio.h>
 int CurrentLED = 0;
-int SW2Pressed
-void main{
-    
+int SW2Pressed;
+void main(){
+    // initialize GPIO, LEDs and LCD
     int CurrentMode = 0;
     while(1){
         int SW1Pressed = isSW1Pressed(); //Where isSW1Pressed fetches the status of switch 1
@@ -74,4 +74,35 @@ void BlinkMode(void){
     }
     */
     //Turn on all LEDs then delay(BlinkDelay) then turn off all LEDs then delay(BlinkDelay)
+}
+
+void CounterMode(void){
+    SW2Pressed = isSW2Pressed(); 
+    static u8 counter;
+    counter =(counter+1);
+    if(SW2Pressed){
+        counter = 0;
+    }
+    static int led1_status=counter & 1;
+    if(led1_status){
+        //turn on led 1
+    }
+    else {
+        //turn off led1
+    }
+    static int led2_status=counter & 0b10;
+    if(led2_status){
+        //turn on led 2
+    }
+    else {
+        //turn off led2
+    }
+    static int led3_status=counter & 0b100;
+    if(led3_status){
+        //turn on led 3
+    }
+    else {
+        //turn off led3
+    }
+    //delay(1ms)
 }
