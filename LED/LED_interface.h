@@ -29,6 +29,7 @@ void LED_InitInternal(void);
 void LED_SetInitialValue(u8 LedID, u8 LedState);
 void LED_InitExternal(u8 Port, u8 Pin);
 STD_ERROR LED_GetStatus(u8 Port, u8 Pin, u8* Status);
-void LED_Toggle(u8 Port, u8 Pin);
+void LED_TurnOn(u8 Port, u8 Pin);
+void LED_TurnOff(u8 Port, u8 Pin);
 
 #endif
