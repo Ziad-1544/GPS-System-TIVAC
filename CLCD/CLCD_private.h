@@ -21,8 +21,8 @@
 //#define eight_bit_mode		   0x38					     
 //#define first_row              0x80         
 //#define second_row             0xC0          
-#define CURSOR_OFF             0x0C					 
-#define CURSOR_ON              0x0E		
+//#define CURSOR_OFF             0x0C					 
+//#define CURSOR_ON              0x0E		
 
 
 STD_ERROR CLCD_8DATASendData(u8 data);
