@@ -19,10 +19,12 @@
 void SW_Init(u8 Port, u8 Pin, GPIO_ResType_t ResType)
 {
     GPIO_PadConfig_t padConfig = {
-        .resType = ResType,
-        .lockFlag = GPIO_UNLOCKED,
-        .slewRate = GPIO_SLEW_RATE_DISABLE
+        GPIO_PULL_DOWN,
+        GPIO_UNLOCKED,
+        GPIO_SLEW_RATE_DISABLE
     };
+
+    padConfig.resType = ResType;
 
     GPIO_INIT(Port);
     GPIO_SetPinDir(Port, Pin, PIN_INPUT);
@@ -51,9 +53,9 @@ u8 SW_IsPressed(u8 Port, u8 Pin, GPIO_ResType_t ResType)
 void EXTSW_Init(u8 Port, u8 Pin)
 {
     GPIO_PadConfig_t padConfig = {
-        .resType = GPIO_PULL_DOWN,  //pull down for external
-        .lockFlag = GPIO_UNLOCKED,
-        .slewRate = GPIO_SLEW_RATE_DISABLE
+        GPIO_PULL_DOWN,  //pull down for external
+        GPIO_UNLOCKED,
+        GPIO_SLEW_RATE_DISABLE
     };
 
     GPIO_INIT(Port);
