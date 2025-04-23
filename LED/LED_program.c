@@ -55,11 +55,12 @@ STD_ERROR LED_GetStatus(u8 Port, u8 Pin, u8* Status)
     return GPIO_ReadPin(Port, Pin, Status);
 }
 
-void LED_Toggle(u8 Port, u8 Pin)
+void LED_TurnOn(u8 Port, u8 Pin)
 {
-    u8 currentState = 0;
-    if (GPIO_ReadPin(Port, Pin, &currentState) == OK)
-    {
-        GPIO_WritePin(Port, Pin, !currentState);
-    }
+    GPIO_WritePin(Port, Pin, LED_ON);
+}
+
+void LED_TurnOff(u8 Port, u8 Pin)
+{
+    GPIO_WritePin(Port, Pin, LED_OFF);
 }
