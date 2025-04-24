@@ -3,8 +3,8 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  MCAL           /////////
 /////                GPIO              /////////
-////                Version:1.2       /////////
-///         DATE:   4-7-2025         /////////
+////                Version:1.3       /////////
+///         DATE:   4-24-2025        /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
 #ifndef GPIO_PRIVATE_H_
@@ -21,7 +21,7 @@
 #define GPIO_RCC_READY_FOR_ACCESS_ADDRESS (0x400FEA08)
 #define GPIO_PORTF_DATA_R (*((volatile u32 *)0x400253FC))
 
-#define LOCK_VALUE 0x4C4F434B
+#define LOCK_VALUE 0x4C4F434BU
 
 
 
@@ -35,7 +35,7 @@
 #define GPIO_WAIT (*((volatile u32 *)(GPIO_RCC_READY_FOR_ACCESS_ADDRESS)))
 
 
-static STD_ERROR GPIO_PortDigitalEnable(u32 Port, u8 Copy_Value);
-static STD_ERROR GPIO_PortUnlock(u32 Port, u8 Copy_Value);
-static STD_ERROR GPIO_PortCommit(u32 Port, u8 Copy_Value);
+static STD_ERROR GPIO_StdErrorPortUnlock(u32 Copy_u32Port, u8 Copy_u8PortValue);
+static STD_ERROR GPIO_StdErrorPortCommit(u32 Copy_u32Port, u8 Copy_u8PortValue);
+static STD_ERROR GPIO_StdErrorPortDigitalEnable(u32 Copy_u32Port, u8 Copy_u8PortValue);
 #endif 
