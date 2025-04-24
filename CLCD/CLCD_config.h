@@ -16,10 +16,12 @@
 //Options: PortA PortB PortC PortD PortE PortF
 #define DATA_PORT   PortC
 #define CTRL_PORT   PortD
+
 //Options: PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7
 #define RS          PIN2
 #define RW          PIN1
 #define ENA         PIN0
+
 //options: CURSOR_OFF  CURSOR_ON
 #define CURSOR_MODE CURSOR_OFF
 
