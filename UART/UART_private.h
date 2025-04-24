@@ -3,8 +3,8 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version:1.1                         /////////
-///          DATE:   4-2-2025                      /////////
+////            Version:1.2                         /////////
+///          DATE:   4-24-2025                     /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
@@ -29,6 +29,15 @@
 #define UART_FR_TXFFBIT 5 // Transmission FIFO is full bit
 #define UART_FR_RXFEBIT 4 // Receive FIFO is empty
 
+#define UART_PR_UART0 0
+#define UART_PR_UART1 1
+#define UART_PR_UART2 2
+#define UART_PR_UART3 3
+#define UART_PR_UART4 4
+#define UART_PR_UART5 5
+#define UART_PR_UART6 6
+#define UART_PR_UART7 7
+
 
 
 
@@ -36,6 +45,7 @@
 
 #define UART_RCC_ENABLE_BASE_ADDRESS       (*((volatile u32 *)0x400FE618)) //UART clock enable register
 #define UART_PRUART_BASE_ADDRESS (*((volatile u32 *) 0x400FEA18))
+
 
 #define UART0_BASE_ADDRESS                      0x4000C000
 #define UART1_BASE_ADDRESS                      0x4000D000
@@ -63,7 +73,7 @@
 #define UARTEnable (*((volatile u32 *) (UART_RCC_ENABLE_BASE_ADDRESS)))
 #define UARTReady (*((volatile u32 *) UART_PRUART_BASE_ADDRESS))
 
-//static STD_ERROR UARTGPIO_CC( UARTConfig *config); // No need for declaring the prototype first in private, just defining the function in .c is enough.
+//static STD_ERROR UART_StdRcc( UART_CONFIG_t *Copy_ptrConfig); // No need for declaring the prototype first in private, just defining the function in .c is enough.
 
 
 #endif
