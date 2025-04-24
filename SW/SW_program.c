@@ -16,61 +16,61 @@
 
 
 
-void SW_Init(u8 Port, u8 Pin, GPIO_ResType_t ResType)
+void SW_VoidInit(u8 Copy_u8Port, u8 Copy_u8Pin, GPIO_ResType_t Copy_ResType)
 {
-    GPIO_PadConfig_t padConfig = {
+    GPIO_PadConfig_t Local_PadConfig = {
         GPIO_PULL_DOWN,
         GPIO_UNLOCKED,
         GPIO_SLEW_RATE_DISABLE
     };
 
-    padConfig.resType = ResType;
+    Local_PadConfig.resType = Copy_ResType;
 
-    GPIO_INIT(Port);
-    GPIO_SetPinDir(Port, Pin, PIN_INPUT);
-    GPIO_SetPinPadConfig(Port, Pin, &padConfig);
-    GPIO_PinAnalogModeSelect(Port, Pin, PIN_OFF);
+    GPIO_StdErrorInit(Copy_u8Port);
+    GPIO_StdErrorSetPinDir(Copy_u8Port, Copy_u8Pin, PIN_INPUT);
+    GPIO_StdErrorSetPinPadConfig(Copy_u8Port, Copy_u8Pin, &Local_PadConfig);
+    GPIO_StdErrorPinAnalogModeSelect(Copy_u8Port, Copy_u8Pin, PIN_OFF);
 }
 
-STD_ERROR SW_GetRawValue(u8 Port, u8 Pin, u8* Copy_PinValue)
+STD_ERROR SW_StdErrorGetRawValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8* Copy_u8PinValue)
 {
-    return GPIO_ReadPin(Port, Pin, Copy_PinValue);
+    return GPIO_StdErrorReadPin(Copy_u8Port, Copy_u8Pin, Copy_u8PinValue);
 }
 
-u8 SW_IsPressed(u8 Port, u8 Pin, GPIO_ResType_t ResType)
+u8 SW_U8IsPressed(u8 Copy_u8Port, u8 Copy_u8Pin, GPIO_ResType_t Copy_ResType)
 {
-    u8 val;
-    GPIO_ReadPin(Port, Pin, &val);
+    u8 Local_u8PinVal;
+    GPIO_StdErrorReadPin(Copy_u8Port, Copy_u8Pin, &Local_u8PinVal);
 
-    if (ResType == GPIO_PULL_UP)
-        return (val == 0) ? SW_PRESSED : SW_NOT_PRESSED;
+    if (Copy_ResType == GPIO_PULL_UP)
+        return (Local_u8PinVal == 0) ? SW_PRESSED : SW_NOT_PRESSED;
     else
-        return (val == 1) ? SW_PRESSED : SW_NOT_PRESSED;
+        return (Local_u8PinVal == 1) ? SW_PRESSED : SW_NOT_PRESSED;
 }
 
 // ========== External Switch Support ==========
 
-void EXTSW_Init(u8 Port, u8 Pin)
+void EXTSW_VoidInit(u8 Copy_u8Port, u8 Copy_u8Pin)
 {
-    GPIO_PadConfig_t padConfig = {
+    GPIO_PadConfig_t Local_PadConfig = {
         GPIO_PULL_DOWN,  //pull down for external
         GPIO_UNLOCKED,
         GPIO_SLEW_RATE_DISABLE
     };
 
-    GPIO_INIT(Port);
-    GPIO_SetPinDir(Port, Pin, PIN_INPUT);
-    GPIO_SetPinPadConfig(Port, Pin, &padConfig);
-    GPIO_PinAnalogModeSelect(Port, Pin, PIN_OFF);
+    GPIO_StdErrorInit(Copy_u8Port);
+    GPIO_StdErrorSetPinDir(Copy_u8Port, Copy_u8Pin, PIN_INPUT);
+    GPIO_StdErrorSetPinPadConfig(Copy_u8Port, Copy_u8Pin, &Local_PadConfig);
+    GPIO_StdErrorPinAnalogModeSelect(Copy_u8Port, Copy_u8Pin, PIN_OFF);
 }
 
-u8 EXTSW_IsPressed(u8 Port, u8 Pin, GPIO_ResType_t ResType)
+u8 EXTSW_U8IsPressed(u8 Copy_u8Port, u8 Copy_u8Pin, GPIO_ResType_t Copy_ResType)
 {
-    u8 val;
-    GPIO_ReadPin(Port, Pin, &val);
+    u8 Local_u8PinVal;
+    GPIO_StdErrorReadPin(Copy_u8Port, Copy_u8Pin, &Local_u8PinVal);
 
-    if (ResType == GPIO_PULL_UP)
-        return (val == 0) ? SW_PRESSED : SW_NOT_PRESSED;
+    if (Copy_ResType == GPIO_PULL_UP)
+        return (Local_u8PinVal == 0) ? SW_PRESSED : SW_NOT_PRESSED;
     else
-        return (val == 1) ? SW_PRESSED : SW_NOT_PRESSED;
+        return (Local_u8PinVal == 1) ? SW_PRESSED : SW_NOT_PRESSED;
 }
