@@ -15,31 +15,31 @@
 void LED_VoidInitInternalLeds(void)
 {
     GPIO_StdErrorInit(PortF);
-    GPIO_StdErrorSetPinDir(LED_PORT, RED_LED_PIN, PIN_OUTPUT);
-    GPIO_StdErrorSetPinDir(LED_PORT, BLUE_LED_PIN, PIN_OUTPUT);
-    GPIO_StdErrorSetPinDir(LED_PORT, GREEN_LED_PIN, PIN_OUTPUT);
+    GPIO_StdErrorSetPinDir(PortF, RED_LED_PIN, PIN_OUTPUT);
+    GPIO_StdErrorSetPinDir(PortF, BLUE_LED_PIN, PIN_OUTPUT);
+    GPIO_StdErrorSetPinDir(PortF, GREEN_LED_PIN, PIN_OUTPUT);
 
     // Default all off
-    GPIO_StdErrorWritePin(LED_PORT, RED_LED_PIN, LED_OFF);
-    GPIO_StdErrorWritePin(LED_PORT, BLUE_LED_PIN, LED_OFF);
-    GPIO_StdErrorWritePin(LED_PORT, GREEN_LED_PIN, LED_OFF);
+    GPIO_StdErrorWritePin(PortF, RED_LED_PIN, LED_OFF);
+    GPIO_StdErrorWritePin(PortF, BLUE_LED_PIN, LED_OFF);
+    GPIO_StdErrorWritePin(PortF, GREEN_LED_PIN, LED_OFF);
 }
 
-STD_ERROR LED_StdErrorSetLedValue(u8 Copy_u8LedId, u8 Copy_u8LedState)
+STD_ERROR LED_StdErrorSetInternalLedValue(u8 Copy_u8LedId, u8 Copy_u8LedState)
 {
     STD_ERROR local_functionStatus=NOK;
     switch (Copy_u8LedId)
     {
     case RED_LED_PIN:
-        GPIO_StdErrorWritePin(LED_PORT, RED_LED_PIN, Copy_u8LedState);
+        GPIO_StdErrorWritePin(PortF, RED_LED_PIN, Copy_u8LedState);
         local_functionStatus = OK;
         break;
     case BLUE_LED_PIN:
-        GPIO_StdErrorWritePin(LED_PORT, BLUE_LED_PIN, Copy_u8LedState);
+        GPIO_StdErrorWritePin(PortF, BLUE_LED_PIN, Copy_u8LedState);
         local_functionStatus = OK;
         break;
     case GREEN_LED_PIN:
-        GPIO_StdErrorWritePin(LED_PORT, GREEN_LED_PIN, Copy_u8LedState);
+        GPIO_StdErrorWritePin(PortF, GREEN_LED_PIN, Copy_u8LedState);
         local_functionStatus = OK;
         break;
     default:
