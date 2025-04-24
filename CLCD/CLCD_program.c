@@ -44,7 +44,7 @@ STD_ERROR  CLCD_StdErrorDataPinssendCommand(u8 Copy_u8Command){
     //RW    0  write mode
     GPIO_StdErrorWritePin(CTRL_PORT,RW,PIN_LOW);
     //SET DATA ->DATA PORT
-  GPIO_StdErrorWritePin(DATA_PORT, Copy_u8Command);
+  GPIO_StdErrorWritePort(DATA_PORT, Copy_u8Command);
     //E     PULSE
     GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_HIGH);   // Pulse EN = HIGH
     Systick_DelayIn_ms(1);
