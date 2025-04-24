@@ -7,6 +7,8 @@
 ///         DATE:   12-4-2025        /////////
 //         AUTHOR: Randa Ayman      /////////
 ////////////////////////////////////////////
+#ifndef CLCD_PRIVATE_h_
+#define CLCD_PRIVATE_h_
 
 STD_ERROR  CLCD_StdErrorDataPinssendCommand(u8 Copy_u8Command);
 STD_ERROR CLCD_StdErrorDataSendData(u8 Copy_u8Data);
