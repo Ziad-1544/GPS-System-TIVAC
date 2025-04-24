@@ -15,11 +15,11 @@
 #include "SYSTICK_private.h"
 #include "SYSTICK_config.h"
 
-STD_ERROR Systick_DelayInTicks(u32 delay);
-STD_ERROR Systick_DelayIn_ms(u32 Copy_Millseconds);
-void Systick_Reset(void);
-u32 Systick_GetRemainingCounts(void);
-STD_ERROR Systick_DelayIn_us(u32 Copy_Microseconds);
+STD_ERROR Systick_StdErrorDelayInTicks(u32 Copy_u32delayInTicks);
+STD_ERROR Systick_StdErrorDelayIn_ms(u32 Copy_u32Millseconds);
+void Systick_VoidReset(void);
+u32 Systick_u32GetRemainingCounts(void);
+STD_ERROR Systick_StdErrorDelayIn_us(u32 Copy_u32Microseconds);
 
 
 #endif 
