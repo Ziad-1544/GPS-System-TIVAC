@@ -19,10 +19,10 @@
 STD_ERROR CLCD_StdErrorDataPinsInit (void)
 {  
     STD_ERROR local_functionstatus = NOK;
-    GPIO_SetPortDir(DATA_PORT,PORT_OUTPUT);        // Set data port as output
-	GPIO_SetPinDir(CTRL_PORT,ENA,PIN_OUTPUT);      // Set EN pin as output
-	GPIO_SetPinDir(CTRL_PORT,RW,PIN_OUTPUT);       // Set RW pin as output
-	GPIO_SetPinDir(CTRL_PORT,RS,PIN_OUTPUT);       // Set RS pin as output
+        GPIO_StdErrorSetPortDir(DATA_PORT,PORT_OUTPUT);        // Set data port as output
+	GPIO_StdErrorSetPinDir(CTRL_PORT,ENA,PIN_OUTPUT);      // Set EN pin as output
+	GPIO_StdErrorSetPinDir(CTRL_PORT,RW,PIN_OUTPUT);       // Set RW pin as output
+	GPIO_StdErrorSetPinDir(CTRL_PORT,RS,PIN_OUTPUT);       // Set RS pin as output
    
 
         Systick_DelayIn_ms(1);
@@ -40,15 +40,15 @@ STD_ERROR CLCD_StdErrorDataPinsInit (void)
 STD_ERROR  CLCD_StdErrorDataPinssendCommand(u8 Copy_u8Command){
     STD_ERROR local_functionstatus = NOK;
     //RS    0   command mode
-   GPIO_WritePin(CTRL_PORT,RS,PIN_LOW);
+   GPIO_StdErrorWritePin(CTRL_PORT,RS,PIN_LOW);
     //RW    0  write mode
-    GPIO_WritePin(CTRL_PORT,RW,PIN_LOW);
+    GPIO_StdErrorWritePin(CTRL_PORT,RW,PIN_LOW);
     //SET DATA ->DATA PORT
-   GPIO_WritePort(DATA_PORT, Copy_u8Command);
+  GPIO_StdErrorWritePin(DATA_PORT, Copy_u8Command);
     //E     PULSE
-    GPIO_WritePin(CTRL_PORT,ENA,PIN_HIGH);   // Pulse EN = HIGH
+    GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_HIGH);   // Pulse EN = HIGH
     Systick_DelayIn_ms(1);
-    GPIO_WritePin(CTRL_PORT,ENA,PIN_LOW);     // Pulse EN = LOW
+    GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_LOW);     // Pulse EN = LOW
 
     Systick_DelayIn_ms(2);
 
@@ -62,15 +62,15 @@ STD_ERROR CLCD_StdErrorDataSendData(u8 Copy_u8Data){
     STD_ERROR local_functionstatus = NOK;
 
     //RS    1  data mode
-    GPIO_WritePin(CTRL_PORT,RS,PIN_HIGH);
+    GPIO_StdErrorWritePin(CTRL_PORT,RS,PIN_HIGH);
     //RW    0   write mode
-    GPIO_WritePin(CTRL_PORT,RW,PIN_LOW);
+   GPIO_StdErrorWritePin(CTRL_PORT,RW,PIN_LOW);
     //SET DATA ->DATA PORT
-    GPIO_WritePort(DATA_PORT,Copy_u8Data);
+    GPIO_StdErrorWritePort(DATA_PORT,Copy_u8Data);
     //E     PULSE
-    GPIO_WritePin(CTRL_PORT,ENA,PIN_HIGH);    // Pulse EN = HIGH
+    GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_HIGH);    // Pulse EN = HIGH
     Systick_DelayIn_ms(1);
-    GPIO_WritePin(CTRL_PORT,ENA,PIN_LOW);      // Pulse EN = LOW
+    GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_LOW);      // Pulse EN = LOW
     Systick_DelayIn_ms(2);
 
     // Set success
