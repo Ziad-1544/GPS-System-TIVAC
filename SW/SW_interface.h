@@ -23,12 +23,12 @@
 #define SW_NOT_PRESSED  0
 
 // Internal switch functions
-void SW_Init(u8 Port, u8 Pin, GPIO_ResType_t ResType);
-STD_ERROR SW_GetRawValue(u8 Port, u8 Pin, u8* Copy_PinValue);
-u8 SW_IsPressed(u8 Port, u8 Pin, GPIO_ResType_t ResType);
+void SW_VoidInit(u8 Copy_u8Port, u8 Copy_u8Pin, GPIO_ResType_t Copy_ResType);
+STD_ERROR SW_StdErrorGetRawValue(u8 Copy_u8Port, u8 Copy_u8Pin, u8* Copy_u8PinValue);
+u8 SW_U8IsPressed(u8 Copy_u8Port, u8 Copy_u8Pin, GPIO_ResType_t Copy_ResType);
 
 // External switch functions
-void EXTSW_Init(u8 Port, u8 Pin);
-u8 EXTSW_IsPressed(u8 Port, u8 Pin, GPIO_ResType_t ResType);
+void EXTSW_VoidInit(u8 Copy_u8Port, u8 Copy_u8Pin);
+u8 EXTSW_U8IsPressed(u8 Copy_u8Port, u8 Copy_u8Pin, GPIO_ResType_t Copy_ResType);
 
 #endif
