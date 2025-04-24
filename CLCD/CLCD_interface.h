@@ -18,14 +18,12 @@
 
 
 
-STD_ERROR CLCD_8DataPinsInit (void);
+STD_ERROR CLCD_StdErrorDataPinsInit (void);
 
-
-STD_ERROR CLCD_8DATASendString( u8 *str);
-STD_ERROR CLCD_8DATASetCursor( u8 row, u8 column);
-STD_ERROR convert_uint16_to_string(u16 value);
-void CLCD_ClearDisplay();
-void CLCD_voidSendSpecialCharacter(u8 Copy_u8BlockNum, u8 Copy_HorizontalValue,u8 copy_AbsVerticalValue,u8 *Pu8ArrayPattern);
-void CLCD_SendNum(u16 Num);
+STD_ERROR CLCD_StdErrorDataSendString(u8 *Copy_u8Str);
+STD_ERROR CLCD_StdErrorDataSetCursor(u8 Copy_u8row, u8 Copy_u8column);
+void CLCD_VoidClearDisplay();
+void CLCD_VoidSendSpecialCharacter(u8 Copy_u8BlockNum, u8 Copy_u8HorizontalValue,u8 copy_u8AbsVerticalValue,u8 *Copy_u8ArrayPattern);
+void CLCD_VoidSendNum(u16 Copy_u16Num);
 
 #endif
