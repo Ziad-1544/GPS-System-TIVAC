@@ -11,7 +11,7 @@
 #ifndef LED_PRIVATE_H_
 #define LED_PRIVATE_H_
 
-// All internal LEDs are on Port C
+
 
 
 #define RED_LED_PIN     PIN1
