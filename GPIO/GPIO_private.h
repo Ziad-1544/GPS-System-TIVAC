@@ -3,8 +3,8 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  MCAL           /////////
 /////                GPIO              /////////
-////                Version:1.3       /////////
-///         DATE:   4-24-2025        /////////
+////                Version:2.0       /////////
+///         DATE:   4-25-2025        /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
 #ifndef GPIO_PRIVATE_H_

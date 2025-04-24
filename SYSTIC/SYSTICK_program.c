@@ -1,11 +1,11 @@
 ////////////////////////////////////////////////////
-///////      Ain Shams University         /////////
-//////     Intro To Embedded Project     /////////
-/////           Layer:  MCAL            /////////
-////                SYSTICK            /////////
-////                Version:1.0       /////////
-////         DATE:   4-7-2025        /////////
-//         AUTHOR: Ziad Kassem      /////////
+////////      Ain Shams University        /////////
+///////     Intro To Embedded Project    /////////
+//////           Layer:  MCAL           /////////
+/////                SYSTICK           /////////
+////                Version:2.0       /////////
+///        DATE:   4-25-2025         /////////
+//        AUTHOR: Ziad Kassem       /////////
 ////////////////////////////////////////////
 
 #include "STD_TYPES.h"
@@ -30,6 +30,7 @@ STD_ERROR Systick_StdErrorDelayIn_ms(u32 Copy_u32Millseconds)
 {   
     STD_ERROR Local_FunctionStatus = OK;
     u32 i;
+    STK->VAL = 0; // RESET THE VAL IN THE BEGINNING OF EVERY DELAY FUNCTION TO AVOID RESIDUAL VALUES LEFT IN THE REGISTER
     for (i = 0; i < Copy_u32Millseconds; i++)
     {
         Local_FunctionStatus = Systick_StdErrorDelayInTicks(No_Of_Tick_To_Delay_1ms); // Delay 1 millisecond
@@ -64,7 +65,7 @@ STD_ERROR Systick_StdErrorDelayIn_us(u32 Copy_u32Microseconds)
 
     //Calculate the number of ticks required for the given microseconds
     u32 TicksRequired = ((Copy_u32Microseconds * SYS_CLK) / 1000000);
-
+    STK->VAL = 0; // RESET THE VAL IN THE BEGINNING OF EVERY DELAY FUNCTION TO AVOID RESIDUAL VALUES LEFT IN THE REGISTER
     //Check if the ticks required is within the valid range 0->2^24-1
     if (TicksRequired <= 0x00FFFFFF)
     {
