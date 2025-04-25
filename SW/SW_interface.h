@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////
+	////////////////////////////////////////////////////
 ////////      Ain Shams University        /////////
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  HAL            /////////
@@ -18,8 +18,8 @@
 #include "STD_TYPES.h"
 
 
-#define Internal_SW1    PIN0
-#define Internal_SW2    PIN4
+#define Internal_SW1    PIN4
+#define Internal_SW2    PIN0
 
 #define SW_PRESSED      1
 #define SW_NOT_PRESSED  0

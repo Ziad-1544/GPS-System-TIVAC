@@ -11,6 +11,7 @@
 #include "LED_interface.h"
 #include "LED_private.h"
 #include "GPIO_Interface.h"
+#include "SYSTICK_interface.h"
 
 void LED_VoidInitInternalLeds(void)
 {
@@ -50,7 +51,7 @@ STD_ERROR LED_StdErrorSetInternalLedValue(u8 Copy_u8LedId, u8 Copy_u8LedState)
 
 void LED_voidInitExternalLed(u8 Copy_u8Port, u8 Copy_u8Pin)
 {
-    GPIO_INIT(Copy_u8Port);
+    GPIO_StdErrorInit(Copy_u8Port);
     GPIO_StdErrorSetPinDir(Copy_u8Port, Copy_u8Pin, PIN_OUTPUT);
     GPIO_StdErrorWritePin(Copy_u8Port, Copy_u8Pin, LED_OFF);
 }
@@ -60,7 +61,7 @@ void LED_voidInitExternalLed(u8 Copy_u8Port, u8 Copy_u8Pin)
 //     return GPIO_ReadPin(Port, Pin, Status);
 // }
 
-void LED_voidTurnOnLed(u8 Copy_u8Port, u8 Copy_u8Pin)
+void LED_voidTurnOnLed(u8 Copy_u8Port, u8 Copy_u8Pin)    //for external leds
 {
     GPIO_StdErrorWritePin(Copy_u8Port, Copy_u8Pin, LED_ON);
 
@@ -78,6 +79,6 @@ void LED_voidToggleExternalLed(u8 Copy_u8Port, u8 Copy_u8Pin,u8 Copy_u8DelayInms
     if (GPIO_StdErrorReadPin(Copy_u8Port, Copy_u8Pin, &currentState) == OK)
     {
         GPIO_StdErrorWritePin(Copy_u8Port, Copy_u8Pin, !currentState);
-        Systick_DelayIn_ms(Copy_u8DelayInms);
+        Systick_StdErrorDelayIn_ms(Copy_u8DelayInms);
     }
 }

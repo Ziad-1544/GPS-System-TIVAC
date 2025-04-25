@@ -17,14 +17,13 @@
 
 
 
-
 STD_ERROR CLCD_StdErrorDataPinsInit (void);
 
 void CLCD_voidDataSendString(u8 *Copy_u8Str);
 
 void CLCD_voidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location);
 
-void CLCD_voidClearDisplay();
+void CLCD_voidClearDisplay(void);
 
 void CLCD_voidSendNum(u16 Copy_u16Num);
 

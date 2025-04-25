@@ -25,14 +25,14 @@ STD_ERROR CLCD_StdErrorDataPinsInit (void)
 	GPIO_StdErrorSetPinDir(CTRL_PORT,RW,PIN_OUTPUT);       // Set RW pin as output
 	GPIO_StdErrorSetPinDir(CTRL_PORT,RS,PIN_OUTPUT);       // Set RS pin as output
     
-    Systick_DelayIn_ms(40);
+    Systick_StdErrorDelayIn_ms(50);
 
     CLCD_StdErrorDataPinssendCommand(0x38);                // Function set: 8-bit, 2 lines, 5x8 font   0b00111000
-    Systick_DelayIn_ms(1);
+    Systick_StdErrorDelayIn_ms(4);
     CLCD_StdErrorDataPinssendCommand(0xF);                 // Display ON, cursor OFF    0b00001100
-    Systick_DelayIn_ms(1);
+    Systick_StdErrorDelayIn_ms(4);
     CLCD_StdErrorDataPinssendCommand(0x1);                 // Clear display       0b00000001
-    Systick_DelayIn_ms(2);
+    Systick_StdErrorDelayIn_ms(4);
     CLCD_StdErrorDataPinssendCommand(0x6);                 // Entry mode set: increment, no shift   0b00000110
     // Set success
     local_functionstatus = OK;
@@ -49,10 +49,10 @@ STD_ERROR  CLCD_StdErrorDataPinssendCommand(u8 Copy_u8Command){
     GPIO_StdErrorWritePort(DATA_PORT, Copy_u8Command);
     //E     PULSE
     GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_HIGH);   // Pulse EN = HIGH
-    Systick_DelayIn_ms(1);
+    Systick_StdErrorDelayIn_ms(2);
     GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_LOW);     // Pulse EN = LOW
 
-    Systick_DelayIn_ms(2);
+    Systick_StdErrorDelayIn_ms(2);
 
     // Set success
     local_functionstatus = OK;
@@ -71,9 +71,9 @@ STD_ERROR CLCD_StdErrorSendData(u8 Copy_u8Data){
     GPIO_StdErrorWritePort(DATA_PORT,Copy_u8Data);
     //E     PULSE
     GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_HIGH);    // Pulse EN = HIGH
-    Systick_DelayIn_ms(1);
+    Systick_StdErrorDelayIn_ms(2);
     GPIO_StdErrorWritePin(CTRL_PORT,ENA,PIN_LOW);      // Pulse EN = LOW
-    Systick_DelayIn_ms(2);
+    Systick_StdErrorDelayIn_ms(2);
 
     // Set success
     local_functionstatus = OK;
@@ -83,7 +83,7 @@ STD_ERROR CLCD_StdErrorSendData(u8 Copy_u8Data){
 void CLCD_voidDataSendString(u8 *Copy_u8Str){
     u8 LOCAL_Str=0;
     while(Copy_u8Str[LOCAL_Str] != '\0'){
-    	CLCD_StdErrorDataSendData(Copy_u8Str[LOCAL_Str]);         // Send each char    SendData function from private
+    	CLCD_StdErrorSendData(Copy_u8Str[LOCAL_Str]);         // Send each char    SendData function from private
     	LOCAL_Str++;
     }
 }
@@ -96,9 +96,9 @@ void CLCD_voidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location){
     }
 }
 
-void CLCD_VoidClearDisplay(){
-    CLCD_StdErrorDataPinssendCommand(0x01);
-	Systick_DelayIn_ms(2);
+void CLCD_VoidClearDisplay(void){
+    CLCD_StdErrorDataPinssendCommand(0x01);     //send command
+	Systick_StdErrorDelayIn_ms(2);
 }
 
 void CLCD_VoidSendNum(u16 Copy_u16Num){
@@ -119,8 +119,8 @@ void CLCD_VoidSendNum(u16 Copy_u16Num){
     for (i = LOCAL_u8counter; i >0 ; i--)
     {
     
-        CLCD_StdErrorDataSendData(arr[i-1]);         // Send digits in correct order
+        CLCD_StdErrorSendData(arr[i-1]);         // Send digits in correct order
     
-        Systick_DelayIn_ms(1);
+        Systick_StdErrorDelayIn_ms(2);
     }
 }
