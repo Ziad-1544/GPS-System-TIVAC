@@ -35,7 +35,7 @@ typedef struct STK_RegDef_t
 
 #define SINGLE_INTERVAL 0
 #define PERIOD_INTERVAL 1
-#define SYS_CLK 16000000 
+#define SYS_CLK 80000000 
 #define Enable_SYSTICK 1
 #define No_Of_Tick_To_Delay_1ms 48000
 #define Counter_flag 0x00010000
