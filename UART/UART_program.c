@@ -3,8 +3,8 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version:1.2                         /////////
-///          DATE:   4-24-2025                     /////////
+////            Version: 2                         /////////
+///          DATE:   4-30-2025                     /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
@@ -23,18 +23,21 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         SET_BIT(UARTEnable, 0);
         GPIO_StdErrorInit(PortA);
         
-        //Disable UART
-        CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
-
-        // Initialize GPIO
-        GPIO_StdErrorSetPinAlternateFunction(PortA, PIN0, PIN_ON, 1);
-        GPIO_StdErrorSetPinAlternateFunction(PortA, PIN1, PIN_ON, 1);
-        GPIO_StdErrorPinAnalogModeSelect(PortA, PIN0, 0);
-        GPIO_StdErrorPinAnalogModeSelect(PortA, PIN1, 0);
+       
         // Waiting for the Peripheral Ready register to be ready for access
-        while(GET_BIT(UARTReady, UART_PR_UART0) == 0){
-            Local_FunctionStatus = NOK;
-        }
+        //while(GET_BIT(UARTReady, UART_PR_UART0) == 0){
+           // Local_FunctionStatus = NOK;
+        //} /* COMMENTED OUT DUE TO ERROR IN FUNCIONALITY */
+
+         //Disable UART
+         CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
+
+         // Initialize GPIO
+         GPIO_StdErrorSetPinAlternateFunction(PortA, PIN0, PIN_ON, 1);
+         GPIO_StdErrorSetPinAlternateFunction(PortA, PIN1, PIN_ON, 1);
+         GPIO_StdErrorPinAnalogModeSelect(PortA, PIN0, 0);
+         GPIO_StdErrorPinAnalogModeSelect(PortA, PIN1, 0);
+
         Local_FunctionStatus = OK;
         return Local_FunctionStatus;
     }
@@ -43,6 +46,12 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         SET_BIT(UARTEnable, 1);
         GPIO_StdErrorInit(PortB);
         
+
+
+        // while(GET_BIT(UARTReady, UART_PR_UART1) == 0){
+        //     Local_FunctionStatus = NOK;
+        // }
+
         //Disable UART
         CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
 
@@ -52,9 +61,6 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         GPIO_StdErrorPinAnalogModeSelect(PortB, PIN0, 0);
         GPIO_StdErrorPinAnalogModeSelect(PortB, PIN1, 0);
 
-        while(GET_BIT(UARTReady, UART_PR_UART1) == 0){
-            Local_FunctionStatus = NOK;
-        }
         Local_FunctionStatus = OK;
         return Local_FunctionStatus;
     }
@@ -63,6 +69,12 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         SET_BIT(UARTEnable, 2);
         GPIO_StdErrorInit(PortD);
         
+        
+
+        // while(GET_BIT(UARTReady, UART_PR_UART2) == 0){
+        //     Local_FunctionStatus = NOK;
+        // }
+
         //Disable UART
         CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
 
@@ -72,9 +84,6 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         GPIO_StdErrorPinAnalogModeSelect(PortD, PIN6, 0);
         GPIO_StdErrorPinAnalogModeSelect(PortD, PIN7, 0);
 
-        while(GET_BIT(UARTReady, UART_PR_UART2) == 0){
-            Local_FunctionStatus = NOK;
-        }
         Local_FunctionStatus = OK;
         return Local_FunctionStatus;
     }
@@ -83,6 +92,12 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         SET_BIT(UARTEnable, 3);
         GPIO_StdErrorInit(PortC);
         
+        
+
+        // while(GET_BIT(UARTReady, UART_PR_UART3) == 0){
+        //     Local_FunctionStatus = NOK;
+        // }
+
         //Disable UART
         CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
 
@@ -92,9 +107,6 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         GPIO_StdErrorPinAnalogModeSelect(PortC, PIN6, 0);
         GPIO_StdErrorPinAnalogModeSelect(PortC, PIN7, 0);
 
-        while(GET_BIT(UARTReady, UART_PR_UART3) == 0){
-            Local_FunctionStatus = NOK;
-        }
         Local_FunctionStatus = OK;
         return Local_FunctionStatus;
     }
@@ -103,6 +115,12 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         SET_BIT(UARTEnable, 4);
         GPIO_StdErrorInit(PortC);
         
+        
+
+        // while(GET_BIT(UARTReady, UART_PR_UART4) == 0){
+        //     Local_FunctionStatus = NOK;
+        // }
+
         //Disable UART
         CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
 
@@ -112,9 +130,6 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         GPIO_StdErrorPinAnalogModeSelect(PortC, PIN4, 0);
         GPIO_StdErrorPinAnalogModeSelect(PortC, PIN5, 0);
 
-        while(GET_BIT(UARTReady, UART_PR_UART4) == 0){
-            Local_FunctionStatus = NOK;
-        }
         Local_FunctionStatus = OK;
         return Local_FunctionStatus;
     }
@@ -123,6 +138,12 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         SET_BIT(UARTEnable, 5);
         GPIO_StdErrorInit(PortE);
         
+        
+
+        // while(GET_BIT(UARTReady, UART_PR_UART5) == 0){
+        //     Local_FunctionStatus = NOK;
+        // }
+
         //Disable UART
         CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
 
@@ -132,9 +153,6 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         GPIO_StdErrorPinAnalogModeSelect(PortE, PIN0, 0);
         GPIO_StdErrorPinAnalogModeSelect(PortE, PIN1, 0);
 
-        while(GET_BIT(UARTReady, UART_PR_UART5) == 0){
-            Local_FunctionStatus = NOK;
-        }
         Local_FunctionStatus = OK;
         return Local_FunctionStatus;
     }
@@ -143,6 +161,12 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         SET_BIT(UARTEnable, 6);
         GPIO_StdErrorInit(PortD);
         
+        
+
+        // while(GET_BIT(UARTReady, UART_PR_UART6) == 0){
+        //     Local_FunctionStatus = NOK;
+        // }
+
         //Disable UART
         CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
 
@@ -152,9 +176,6 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         GPIO_StdErrorPinAnalogModeSelect(PortD, PIN4, 0);
         GPIO_StdErrorPinAnalogModeSelect(PortD, PIN5, 0);
 
-        while(GET_BIT(UARTReady, UART_PR_UART6) == 0){
-            Local_FunctionStatus = NOK;
-        }
         Local_FunctionStatus = OK;
         return Local_FunctionStatus;
     }
@@ -163,6 +184,12 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         SET_BIT(UARTEnable, 7);
         GPIO_StdErrorInit(PortE);
         
+        
+
+        // while(GET_BIT(UARTReady, UART_PR_UART7) == 0){
+        //     Local_FunctionStatus = NOK;
+        // }
+
         //Disable UART
         CLR_BIT(Copy_ptrConfig->Module->CTL, UART_CTL_ENABLEBIT);
 
@@ -172,9 +199,6 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
         GPIO_StdErrorPinAnalogModeSelect(PortE, PIN0, 0);
         GPIO_StdErrorPinAnalogModeSelect(PortE, PIN1, 0);
 
-        while(GET_BIT(UARTReady, UART_PR_UART7) == 0){
-            Local_FunctionStatus = NOK;
-        }
         Local_FunctionStatus = OK;
         return Local_FunctionStatus;
     }
@@ -250,11 +274,14 @@ STD_ERROR UART_StdErrorSendByte(UART_CONFIG_t *Copy_ptrConfig, u8 Copy_u8Data){
 }
 
 STD_ERROR UART_StdErrorReceiveByte(UART_CONFIG_t *Copy_ptrConfig, u8 *Copy_ptru8Data){
+    u32 timeout = 48000;
     STD_ERROR Local_FunctionStatus = NOK;
 
-    while(IS_BIT_SET(Copy_ptrConfig->Module->FR, UART_FR_RXFEBIT)) {};
+    while(IS_BIT_SET(Copy_ptrConfig->Module->FR, UART_FR_RXFEBIT)) 
+    
 
     Local_FunctionStatus = OK;
     *Copy_ptru8Data = (Copy_ptrConfig->Module->DR & 0x000000FF); // BITWISE AND
     return Local_FunctionStatus;
-}
+    };
+

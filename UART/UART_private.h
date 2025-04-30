@@ -3,8 +3,8 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version:1.2                         /////////
-///          DATE:   4-24-2025                     /////////
+////            Version: 2                         /////////
+///          DATE:   4-30-2025                     /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
@@ -15,7 +15,7 @@
 
 
 
-#define UARTSystemClock 16000000.0
+#define UARTSystemClock 48000000.0
 
 #define UART_LCRH_PENBIT 1 // Bit n1 in LCRH register is the PEN (Parity Enable) bit
 #define UART_LCRH_EVENORODDBIT 2 // Bit n2 chooses between even or odd parity (EPS)
@@ -43,8 +43,8 @@
 
 
 
-#define UART_RCC_ENABLE_BASE_ADDRESS       (*((volatile u32 *)0x400FE618)) //UART clock enable register
-#define UART_PRUART_BASE_ADDRESS (*((volatile u32 *) 0x400FEA18))
+#define UART_RCC_ENABLE_BASE_ADDRESS       0x400FE618 //UART clock enable register
+#define UART_PRUART_BASE_ADDRESS           0x400FEA18
 
 
 #define UART0_BASE_ADDRESS                      0x4000C000

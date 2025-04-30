@@ -3,8 +3,8 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version:1.2                         /////////
-///          DATE:   4-24-2025                     /////////
+////            Version: 2                         /////////
+///          DATE:   4-30-2025                     /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
@@ -49,6 +49,7 @@ typedef struct{
     
     volatile u32 reserve[4];
     volatile u32 FR;  // UART Flag Register
+    volatile u32 reserved1;
     volatile u32 ILPR; // IrDA Low Power Register
     volatile u32 IBRD; // Integer Baud-Rate Register
     volatile u32 FBRD; // Fraction Baud-Rate Register
@@ -70,7 +71,6 @@ typedef struct{
 STD_ERROR UART_StdErrorInit(UART_CONFIG_t *Copy_ptrConfig); // Initialize and define the struct before calling the fn
 STD_ERROR UART_StdErrorSendByte(UART_CONFIG_t *Copy_ptrConfig, u8 Copy_u8Data); 
 STD_ERROR UART_StdErrorReceiveByte(UART_CONFIG_t *Copy_ptrConfig, u8 *Copy_ptru8Data);
-
 
 
 
