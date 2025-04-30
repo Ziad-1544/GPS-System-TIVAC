@@ -20,10 +20,15 @@
 
 STD_ERROR CLCD_StdErrorDataPinsInit (void);
 
-STD_ERROR CLCD_StdErrorDataSendString(u8 *Copy_u8Str);
-STD_ERROR CLCD_StdErrorDataSetCursor(u8 Copy_u8row, u8 Copy_u8column);
-void CLCD_VoidClearDisplay();
-void CLCD_VoidSendSpecialCharacter(u8 Copy_u8BlockNum, u8 Copy_u8HorizontalValue,u8 copy_u8AbsVerticalValue,u8 *Copy_u8ArrayPattern);
-void CLCD_VoidSendNum(u16 Copy_u16Num);
+void CLCD_voidDataSendString(u8 *Copy_u8Str);
+
+void CLCD_voidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location);
+
+void CLCD_voidClearDisplay(void);
+
+void CLCD_voidSendNum(u16 Copy_u16Num);
+
+#define LINE_1   0
+#define LINE_2   1
 
 #endif

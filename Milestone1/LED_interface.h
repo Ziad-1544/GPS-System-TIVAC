@@ -15,13 +15,16 @@
 #include "LED_private.h"
 #include "LED_config.h"
 
+#define RED_LED_PIN     PIN1
+#define BLUE_LED_PIN    PIN2
+#define GREEN_LED_PIN   PIN3
 
 // LED States
 #define LED_ON   1
 #define LED_OFF  0
 
 void LED_VoidInitInternalLeds(void);
-STD_ERROR LED_StdErrorSetLedValue(u8 Copy_u8LedId, u8 Copy_u8LedState);
+STD_ERROR LED_StdErrorSetInternalLedValue(u8 Copy_u8LedId, u8 Copy_u8LedState);
 void LED_voidInitExternalLed(u8 Copy_u8Port, u8 Copy_u8Pin);
 void LED_voidTurnOnLed(u8 Copy_u8Port, u8 Copy_u8Pin);
 void LED_voidTurnOffLed(u8 Copy_u8Port, u8 Copy_u8Pin);

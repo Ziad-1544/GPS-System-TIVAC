@@ -28,9 +28,11 @@ STD_ERROR Systick_StdErrorDelayInTicks(u32 Copy_u32delayInTicks)
 
 STD_ERROR Systick_StdErrorDelayIn_ms(u32 Copy_u32Millseconds)
 {   
-    STD_ERROR Local_FunctionStatus = OK;
     u32 i;
-    for (i = 0; i < Copy_u32Millseconds; i++)
+    STD_ERROR Local_FunctionStatus = OK;
+    STK->VAL = 0; // RESET THE VAL IN THE BEGINNING OF EVERY DELAY FUNCTION TO AVOID RESIDUAL VALUES LEFT IN THE REGISTER
+    
+    for (i = 0; i < (Copy_u32Millseconds); i++)
     {
         Local_FunctionStatus = Systick_StdErrorDelayInTicks(No_Of_Tick_To_Delay_1ms); // Delay 1 millisecond
         if (Local_FunctionStatus)
@@ -39,6 +41,7 @@ STD_ERROR Systick_StdErrorDelayIn_ms(u32 Copy_u32Millseconds)
             break;
         }
     }
+
     return Local_FunctionStatus;
 }
 
@@ -60,10 +63,11 @@ u32 Systick_u32GetRemainingCounts(void)
 
 STD_ERROR Systick_StdErrorDelayIn_us(u32 Copy_u32Microseconds)
 {
-    STD_ERROR Local_FunctionStatus = NOK;
-
     //Calculate the number of ticks required for the given microseconds
     u32 TicksRequired = ((Copy_u32Microseconds * SYS_CLK) / 1000000);
+    STD_ERROR Local_FunctionStatus = NOK;
+    STK->VAL = 0;
+    
 
     //Check if the ticks required is within the valid range 0->2^24-1
     if (TicksRequired <= 0x00FFFFFF)

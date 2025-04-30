@@ -38,4 +38,5 @@
 static STD_ERROR GPIO_StdErrorPortUnlock(u32 Copy_u32Port, u8 Copy_u8PortValue);
 static STD_ERROR GPIO_StdErrorPortCommit(u32 Copy_u32Port, u8 Copy_u8PortValue);
 static STD_ERROR GPIO_StdErrorPortDigitalEnable(u32 Copy_u32Port, u8 Copy_u8PortValue);
+
 #endif 
