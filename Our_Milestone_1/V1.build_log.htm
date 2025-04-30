@@ -1,0 +1,47 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Junior\SPRING 2025\EMBEDDED\project-gps\Milestone1\V1\V1.uvproj
+Project File Date:  04/25/2025
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling startup_TM4C123.s...
+compiling CLCD_program.c...
+compiling GPIO_program.c...
+GPIO_program.c(19): warning:  #550-D: variable "Local_Port" was set but never used
+      volatile GPIO_PORT_t* Local_Port = NULL;
+GPIO_program.c: 1 warning, 0 errors
+compiling LED_program.c...
+compiling main.c...
+main.c(43): warning:  #223-D: function "CLCD_VoidClearDisplay" declared implicitly
+      CLCD_VoidClearDisplay();
+main.c(66): warning:  #111-D: statement is unreachable
+      LED_voidTurnOffLed(PortA, 5);
+main.c(28): warning:  #177-D: variable "i" was declared but never referenced
+        u8 i;
+main.c(73): warning:  #223-D: function "CLCD_VoidClearDisplay" declared implicitly
+      CLCD_VoidClearDisplay();
+main.c(107): warning:  #223-D: function "CLCD_VoidClearDisplay" declared implicitly
+          CLCD_VoidClearDisplay();
+main.c(144): warning:  #223-D: function "CLCD_VoidClearDisplay" declared implicitly
+      CLCD_VoidClearDisplay();
+main.c(183): warning:  #223-D: function "CLCD_VoidClearDisplay" declared implicitly
+      CLCD_VoidClearDisplay();
+main.c: 7 warnings, 0 errors
+compiling SW_program.c...
+compiling system_TM4C123.c...
+compiling SYSTICK_program.c...
+linking...
+Program Size: Code=4996 RO-data=660 RW-data=24 ZI-data=608  
+".\V1.axf" - 0 Error(s), 8 Warning(s).
+Load "D:\\Junior\\SPRING 2025\\EMBEDDED\\project-gps\\Milestone1\\V1\\V1.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+</pre>
+</body>
+</html>

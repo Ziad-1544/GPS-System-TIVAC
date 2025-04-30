@@ -1,0 +1,11 @@
+.\uart_program.o: UART_program.c
+.\uart_program.o: BIT_MATH.h
+.\uart_program.o: STD_TYPES.h
+.\uart_program.o: GPIO_Interface.h
+.\uart_program.o: GPIO_Private.h
+.\uart_program.o: GPIO_interface.h
+.\uart_program.o: GPIO_Config.h
+.\uart_program.o: UART_interface.h
+.\uart_program.o: UART_private.h
+.\uart_program.o: UART_interface.h
+.\uart_program.o: UART_config.h
