@@ -20,7 +20,7 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
 
     if(Copy_ptrConfig->Module == UART0){
         // Enable Clocks for GPIO and UART
-        UARTEnable |= SET_BIT(UARTEnable, 0);
+        SET_BIT(UARTEnable, 0);
         GPIO_StdErrorInit(PortA);
         
         //Disable UART
@@ -40,7 +40,7 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
     }
     else if(Copy_ptrConfig->Module == UART1){
         // Enable Clocks for GPIO and UART
-        UARTEnable |= SET_BIT(UARTEnable, 1);
+        SET_BIT(UARTEnable, 1);
         GPIO_StdErrorInit(PortB);
         
         //Disable UART
@@ -60,7 +60,7 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
     }
     else if(Copy_ptrConfig->Module == UART2){
         // Enable Clocks for GPIO and UART
-        UARTEnable |= SET_BIT(UARTEnable, 2);
+        SET_BIT(UARTEnable, 2);
         GPIO_StdErrorInit(PortD);
         
         //Disable UART
@@ -80,7 +80,7 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
     }
     else if(Copy_ptrConfig->Module == UART3){
         // Enable Clocks for GPIO and UART
-        UARTEnable |= SET_BIT(UARTEnable, 3);
+        SET_BIT(UARTEnable, 3);
         GPIO_StdErrorInit(PortC);
         
         //Disable UART
@@ -100,7 +100,7 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
     }
     else if(Copy_ptrConfig->Module == UART4){
         // Enable Clocks for GPIO and UART
-        UARTEnable |= SET_BIT(UARTEnable, 4);
+        SET_BIT(UARTEnable, 4);
         GPIO_StdErrorInit(PortC);
         
         //Disable UART
@@ -120,7 +120,7 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
     }
     else if(Copy_ptrConfig->Module == UART5){
         // Enable Clocks for GPIO and UART
-        UARTEnable |= SET_BIT(UARTEnable, 5);
+        SET_BIT(UARTEnable, 5);
         GPIO_StdErrorInit(PortE);
         
         //Disable UART
@@ -140,7 +140,7 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
     }
     else if(Copy_ptrConfig->Module == UART6){
         // Enable Clocks for GPIO and UART
-        UARTEnable |= SET_BIT(UARTEnable, 6);
+        SET_BIT(UARTEnable, 6);
         GPIO_StdErrorInit(PortD);
         
         //Disable UART
@@ -160,7 +160,7 @@ static STD_ERROR UART_StdErrorRcc( UART_CONFIG_t *Copy_ptrConfig){
     }
     else if(Copy_ptrConfig->Module == UART7){
         // Enable Clocks for GPIO and UART
-        UARTEnable |= SET_BIT(UARTEnable, 7);
+        SET_BIT(UARTEnable, 7);
         GPIO_StdErrorInit(PortE);
         
         //Disable UART
