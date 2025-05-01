@@ -61,7 +61,7 @@ void LED_voidInitExternalLed(u8 Copy_u8Port, u8 Copy_u8Pin)
 //     return GPIO_ReadPin(Port, Pin, Status);
 // }
 
-void LED_voidTurnOnLed(u8 Copy_u8Port, u8 Copy_u8Pin)    //for external leds
+void LED_voidTurnOnLed(u8 Copy_u8Port, u8 Copy_u8Pin)
 {
     GPIO_StdErrorWritePin(Copy_u8Port, Copy_u8Pin, LED_ON);
 

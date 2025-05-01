@@ -17,6 +17,7 @@
 
 
 
+
 STD_ERROR CLCD_StdErrorDataPinsInit (void);
 
 void CLCD_voidDataSendString(u8 *Copy_u8Str);

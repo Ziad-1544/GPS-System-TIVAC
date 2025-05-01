@@ -97,7 +97,7 @@ void CLCD_voidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location){
 }
 
 void CLCD_VoidClearDisplay(void){
-    CLCD_StdErrorDataPinssendCommand(0x01);     //send command
+    CLCD_StdErrorDataPinssendCommand(0x01);
 	Systick_StdErrorDelayIn_ms(2);
 }
 

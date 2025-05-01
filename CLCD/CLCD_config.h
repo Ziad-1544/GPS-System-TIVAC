@@ -3,7 +3,7 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  HAL            /////////
 /////                CLCD              /////////
-////                Version:2         /////////
+////                Version:1.1       /////////
 ///         DATE:   12-4-2025        /////////
 //         AUTHOR: Randa Ayman      /////////
 ////////////////////////////////////////////
@@ -23,7 +23,7 @@
 #define ENA         PIN4
 
 //options: CURSOR_OFF  CURSOR_ON
-//#define CURSOR_MODE CURSOR_OFF
+#define CURSOR_MODE CURSOR_OFF
 
 
 //#define RS  0x01  
