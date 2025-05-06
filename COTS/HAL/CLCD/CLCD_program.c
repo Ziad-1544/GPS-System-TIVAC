@@ -9,12 +9,12 @@
 ////////////////////////////////////////////
 
 
-#include "GPIO_interface.h" 
+#include "../../MCAL/GPIO/GPIO_interface.h" 
+#include "../../MCAL/SYSTICK/SYSTICK_interface.h"
+#include "../../LIB/STD/STD_TYPES.h"
 #include "CLCD_interface.h"
 #include "CLCD_private.h"
 #include "CLCD_config.h"
-#include "STD_TYPES.h"
-#include "SYSTICK_interface.h"
 
 STD_ERROR CLCD_StdErrorDataPinsInit (void)
 {  
