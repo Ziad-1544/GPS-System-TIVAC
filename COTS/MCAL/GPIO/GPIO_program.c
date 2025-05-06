@@ -7,8 +7,8 @@
 ///         DATE:   4-7-2025         /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD/STD_TYPES.h"
+#include "../../LIB/BITMATH/BIT_MATH.h"
 #include "GPIO_Private.h"
 #include "GPIO_Config.h"
 #include "GPIO_Interface.h"
