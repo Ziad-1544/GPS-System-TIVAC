@@ -11,9 +11,10 @@
 #ifndef LCD_INTERFACE_h_
 #define LCD_INTERFACE_h_
 
+#include "../../MCAL/GPIO/GPIO_interface.h" 
 #include "CLCD_config.h"
 #include "CLCD_private.h"
-#include "GPIO_Interface.h"
+
 
 
 
