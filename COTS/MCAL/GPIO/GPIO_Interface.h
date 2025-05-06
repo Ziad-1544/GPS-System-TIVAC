@@ -10,8 +10,8 @@
 #ifndef GPIO_INTERFACE_H_
 #define GPIO_INTERFACE_H_
 
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD/STD_TYPES.h"
+#include "../../LIB/BITMATH/BIT_MATH.h"
 #include "GPIO_Private.h"
 #include "GPIO_Config.h"
 
