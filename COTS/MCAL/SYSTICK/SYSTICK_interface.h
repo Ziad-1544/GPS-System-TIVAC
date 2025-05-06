@@ -11,7 +11,7 @@
 #ifndef STK_INTERFACE_H_
 #define STK_INTERFACE_H_
 
-#include "STD_TYPES.h"
+#include "../../LIB/STD/STD_TYPES.h"
 #include "SYSTICK_private.h"
 #include "SYSTICK_config.h"
 
