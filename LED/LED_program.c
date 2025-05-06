@@ -8,10 +8,11 @@
 //         AUTHOR: Randa Ayman      /////////
 ////////////////////////////////////////////
 
+#include "../../MCAL/GPIO/GPIO_interface.h" 
+#include "../../MCAL/SYSTICK/SYSTICK_interface.h"
 #include "LED_interface.h"
 #include "LED_private.h"
-#include "GPIO_Interface.h"
-#include "SYSTICK_interface.h"
+
 
 void LED_VoidInitInternalLeds(void)
 {
