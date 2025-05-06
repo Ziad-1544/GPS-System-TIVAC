@@ -11,7 +11,7 @@
 #ifndef LED_INTERFACE_H_
 #define LED_INTERFACE_H_
 
-#include "STD_TYPES.h"
+#include "../../LIB/STD/STD_TYPES.h"
 #include "LED_private.h"
 #include "LED_config.h"
 
