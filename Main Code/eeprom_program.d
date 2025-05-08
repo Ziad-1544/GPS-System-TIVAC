@@ -1,0 +1,13 @@
+.\eeprom_program.o: EEPROM_program.c
+.\eeprom_program.o: STD_TYPES.h
+.\eeprom_program.o: BIT_MATH.h
+.\eeprom_program.o: GPIO_interface.h
+.\eeprom_program.o: GPIO_Private.h
+.\eeprom_program.o: GPIO_interface.h
+.\eeprom_program.o: GPIO_Config.h
+.\eeprom_program.o: SYSTICK_interface.h
+.\eeprom_program.o: SYSTICK_private.h
+.\eeprom_program.o: SYSTICK_config.h
+.\eeprom_program.o: EEPROM_interface.h
+.\eeprom_program.o: EEPROM_private.h
+.\eeprom_program.o: EEPROM_config.h

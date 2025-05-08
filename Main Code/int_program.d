@@ -1,0 +1,10 @@
+.\int_program.o: INT_program.c
+.\int_program.o: STD_TYPES.h
+.\int_program.o: BIT_MATH.h
+.\int_program.o: GPIO_interface.h
+.\int_program.o: GPIO_Private.h
+.\int_program.o: GPIO_interface.h
+.\int_program.o: GPIO_Config.h
+.\int_program.o: INT_interface.h
+.\int_program.o: INT_private.h
+.\int_program.o: INT_config.h

@@ -1,0 +1,17 @@
+--cpu Cortex-M4.fp
+".\startup_tm4c123.o"
+".\app.o"
+".\clcd_program.o"
+".\eeprom_program.o"
+".\gpio_program.o"
+".\gps_program.o"
+".\led_program.o"
+".\main.o"
+".\sw_program.o"
+".\system_tm4c123.o"
+".\systick_program.o"
+".\uart_program.o"
+".\int_program.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\V1.map" -o .\V1.axf
