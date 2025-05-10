@@ -13,7 +13,7 @@
 
 #include "CLCD_config.h"
 #include "CLCD_private.h"
-#include "../../MCAL/GPIO/GPIO_interface.h" 
+#include "GPIO_interface.h" 
 
 
 
