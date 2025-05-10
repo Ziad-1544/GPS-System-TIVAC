@@ -1,8 +1,8 @@
 👤 Ahmad 🧑‍💻 @stev0ie
 
-🧑‍🔧 Role: Embedded Systems Developer
+🧑‍🔧 Role: Embedded Systems Developer.
 
-🌿 Branches: UART-driver, Tiva-revision, Debugging
+🌿 Branches: UART-driver, Tiva-revision, Debugging.
 
 📌 Key Contributions:
 
@@ -11,6 +11,9 @@
 🧪 Conducted debugging across core project milestones to ensure reliability.
 
 🔧 Reviewed and corrected hardware connections for the TIVA board to match system requirements.
+
+🚩 Led and contributed to Milestone 3 , establishing the foundation for core system functionality.
+
 
 ✅ Final Responsibilities:
 
