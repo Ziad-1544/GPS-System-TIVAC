@@ -4,7 +4,7 @@
 //////           Layer:  LIB             /////////
 /////        Standard Types (STD)       /////////
 ////         DATE:   10-5-2025         /////////
-///         version:   1.2            /////////
+///         version:   3.0            /////////
 //         AUTHOR: Jessica Samuel    /////////
 ///////////////////////////////////////////// 
 #ifndef STD_TYPES_H_

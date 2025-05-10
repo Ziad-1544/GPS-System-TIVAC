@@ -4,7 +4,7 @@
 //////           Layer:  LIB             /////////
 /////        Bit Manipulation (BIT)     /////////
 ////         DATE:   10-5-2025         /////////
-///         version:   1.3            /////////
+///         version:   3.0            /////////
 //         AUTHOR: Jessica Samuel    /////////
 /////////////////////////////////////////////  
 #ifndef BIT_MATH_H_
