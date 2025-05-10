@@ -12,8 +12,8 @@
 #define SW_INTERFACE_H
 
 
-#include "../../MCAL/GPIO/GPIO_interface.h" 
-#include "../../LIB/STD/STD_TYPES.h"
+#include "GPIO_interface.h" 
+#include "STD_TYPES.h"
 #include "SW_private.h"
 #include "SW_config.h"
 
