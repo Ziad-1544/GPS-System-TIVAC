@@ -41,8 +41,8 @@ This project implements a real-time GPS tracking system using the Tiva C (TM4C12
 | GPS Driver           | 🌐 GPS module parsing and extraction        | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/3-GPS) |
 | Main Code            | 🧠 Core logic for full GPS functionality    | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/blob/master/main.c) |
 | Phase 1 Fixes        | 🔧 Compilation error resolution             | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Phase_1_Compilation_errors) |
-| Milestone 1 (MCAL)   | 🧭 Initial GPS system integration           | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_1) |
-| Milestone 2 (UART)   | 📍 Feature refinement and fixes             | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_2) |
+| Milestone 1 (MCAL)   | 🧭 Testing GPIO,SYSTICK,SW,LEDS,CLCD        | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_1) |
+| Milestone 2 (UART)   | 📍 Integrating UART with other peripherals  | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_2) |
 | Milestone 3 (EEPROM) | 📦 Location saving feature                  | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Milestone_4_EEPROM) |
 | Milestone 4 (INT)    | 🚦 Interrupt-driven location actions        | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Milestone_5_Interrupt) |
 | Coordinates DataBase | 📌 Parsing and managing coordinate data     | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Coordinates) |
