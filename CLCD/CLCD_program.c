@@ -3,8 +3,8 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  HAL            /////////
 /////                CLCD              /////////
-////                Version:2         /////////
-///         DATE:   30-4-2025        /////////
+////                Version:3.0       /////////
+///         DATE:   10-5-2025        /////////
 //         AUTHOR: Randa Ayman      /////////
 ////////////////////////////////////////////
 
@@ -80,7 +80,7 @@ STD_ERROR CLCD_StdErrorSendData(u8 Copy_u8Data){
     return local_functionstatus;
 }
 
-void CLCD_voidDataSendString(u8 *Copy_u8Str){
+void CLCD_VoidDataSendString(u8 *Copy_u8Str){
     u8 LOCAL_Str=0;
     while(Copy_u8Str[LOCAL_Str] != '\0'){
     	CLCD_StdErrorSendData(Copy_u8Str[LOCAL_Str]);         // Send each char    SendData function from private
@@ -88,7 +88,7 @@ void CLCD_voidDataSendString(u8 *Copy_u8Str){
     }
 }
 
-void CLCD_voidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location){
+void CLCD_VoidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location){
     
     switch (Copy_u8LineNum) {
         case LINE_1: CLCD_StdErrorDataPinssendCommand(0x80 + Copy_u8Location); break;   //The "column" is added to this base address. 

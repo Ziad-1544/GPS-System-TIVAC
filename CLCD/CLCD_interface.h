@@ -3,8 +3,8 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  HAL            /////////
 /////                CLCD              /////////
-////                Version:2         /////////
-///         DATE:   30-4-2025        /////////
+////                Version:3.0       /////////
+///         DATE:   10-5-2025        /////////
 //         AUTHOR: Randa Ayman      /////////
 ////////////////////////////////////////////
 
@@ -20,13 +20,13 @@
 
 STD_ERROR CLCD_StdErrorDataPinsInit (void);
 
-void CLCD_voidDataSendString(u8 *Copy_u8Str);
+void CLCD_VoidDataSendString(u8 *Copy_u8Str);
 
-void CLCD_voidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location);
+void CLCD_VoidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location);
 
-void CLCD_voidClearDisplay(void);
+void CLCD_VoidClearDisplay(void);
 
-void CLCD_voidSendNum(u16 Copy_u16Num);
+void CLCD_VoidSendNum(u16 Copy_u16Num);
 
 #define LINE_1   0
 #define LINE_2   1
