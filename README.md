@@ -25,3 +25,10 @@
 
 
 📁 Branch Files:
+
+| 🧩 Component         | 📂 Description                       | 🔗 Link |
+|----------------------|--------------------------------------|--------|
+| Bit Math & Std Types | Utility macros and base types        | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/jessica/LIB) |
+| CLCD Driver          | Assisted in LCD driver logic         | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/randa/CLCD) |
+| LED Driver           | Assisted in LED output control       | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/randa/LED) |
+| Switch Driver        | Assisted in switch input handling    | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/randa/SW) |
