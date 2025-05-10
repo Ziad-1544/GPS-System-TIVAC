@@ -12,7 +12,7 @@
 
 🔧 Reviewed and corrected hardware connections for the TIVA board to match system requirements.
 
-🚩 Led and contributed to Milestone 3 , establishing the foundation for core system functionality.
+🚩 Contributed to Milestone 2 , establishing the foundation for core system functionality.
 
 
 ✅ Final Responsibilities:
@@ -23,3 +23,9 @@
 
 
 📁 Branch Files:
+
+| 🧩 Component        | 📂 Description                       | 🔗 Link |
+|---------------------|--------------------------------------|--------|
+| UART Driver         | Serial communication implementation | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ahmad/UART) |
+| Milestone 2         | Assisted in debugging and revisions | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_2) |
+
