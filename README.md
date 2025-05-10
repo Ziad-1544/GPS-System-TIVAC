@@ -1,6 +1,6 @@
 👤 Ziad 🧑‍💼 @Ziad-1544
 
-🧑‍✈️ Role: Team Leader & Senior Embedded Developer.
+🧑‍✈️ Role: Team Leader & Embedded Developer.
 
 🌿 Branches: GPIO-driver, SYSTICK-driver, GPS-driver, Milestone-1, Milestone-2
 
@@ -24,20 +24,16 @@
 
 📁 Branch Files:
 
-### 📁 Related Files
-- 🔌 [GPIO Driver](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/1-GPIO)
-- 
-- ⏱️ [SYSTICK Driver](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/2-SYSTICK)
-- 
-- 📡 [GPS Driver](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/3-GPS)
-- 
-- 📍 [Coordinates Logic](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Coordinates)
-- 
-- 🧠 [Main Code](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Main%20Code)
-- 
-- 🧾 [Milestone 1](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_1)
-- 
-- 🧾 [Milestone 2](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_2)
+| 🧩 Component         | 📂 Description           | 🔗 Link |
+|----------------------|--------------------------|--------|
+| GPIO Driver          | Digital I/O driver       | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/1-GPIO) |
+| SYSTICK Driver       | System tick timer        | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/2-SYSTICK) |
+| GPS Driver           | Location parsing         | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/3-GPS) |
+| Coordinates Logic    | GPS coordinate handling  | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Coordinates) |
+| Main Application     | Project entry point      | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Main%20Code) |
+| Milestone 1          | Initial feature delivery | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_1) |
+| Milestone 2          | Second feature delivery  | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Our_Milestone_2) |
+
 
 
 
