@@ -3,7 +3,7 @@
 ///////     Intro To Embedded Project     /////////
 //////           Layer:  LIB             /////////
 /////        Bit Manipulation (BIT)     /////////
-////         DATE:   24-4-2025         /////////
+////         DATE:   10-5-2025         /////////
 ///         version:   1.3            /////////
 //         AUTHOR: Jessica Samuel    /////////
 /////////////////////////////////////////////  
