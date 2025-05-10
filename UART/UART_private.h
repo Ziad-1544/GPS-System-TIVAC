@@ -3,8 +3,8 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version:1.2                         /////////
-///          DATE:   4-24-2025                     /////////
+////            Version:3.0                         /////////
+///          DATE:   5-10-2025                     /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
@@ -15,7 +15,7 @@
 
 
 
-#define UARTSystemClock 16000000.0
+#define UARTSystemClock 48000000.0
 
 #define UART_LCRH_PENBIT 1 // Bit n1 in LCRH register is the PEN (Parity Enable) bit
 #define UART_LCRH_EVENORODDBIT 2 // Bit n2 chooses between even or odd parity (EPS)
@@ -43,8 +43,8 @@
 
 
 
-#define UART_RCC_ENABLE_BASE_ADDRESS       (*((volatile u32 *)0x400FE618)) //UART clock enable register
-#define UART_PRUART_BASE_ADDRESS (*((volatile u32 *) 0x400FEA18))
+#define UART_RCC_ENABLE_BASE_ADDRESS        0x400FE618 //UART clock enable register 0x400FE618
+#define UART_PRUART_BASE_ADDRESS            0x400FEA18
 
 
 #define UART0_BASE_ADDRESS                      0x4000C000
@@ -62,14 +62,14 @@
 #define UART_LCRH_WLEN_8        0x00000060  // 8 bits
 
 
-#define UART0 ((UART_Type *) UART0_BASE_ADDRESS)
-#define UART1 ((UART_Type *) UART1_BASE_ADDRESS)
-#define UART2 ((UART_Type *) UART2_BASE_ADDRESS)
-#define UART3 ((UART_Type *) UART3_BASE_ADDRESS)
-#define UART4 ((UART_Type *) UART4_BASE_ADDRESS)
-#define UART5 ((UART_Type *) UART5_BASE_ADDRESS)
-#define UART6 ((UART_Type *) UART6_BASE_ADDRESS)
-#define UART7 ((UART_Type *) UART7_BASE_ADDRESS)
+#define UART0 ((UART_TYPE_t *) UART0_BASE_ADDRESS)
+#define UART1 ((UART_TYPE_t *) UART1_BASE_ADDRESS)
+#define UART2 ((UART_TYPE_t *) UART2_BASE_ADDRESS)
+#define UART3 ((UART_TYPE_t *) UART3_BASE_ADDRESS)
+#define UART4 ((UART_TYPE_t *) UART4_BASE_ADDRESS)
+#define UART5 ((UART_TYPE_t *) UART5_BASE_ADDRESS)
+#define UART6 ((UART_TYPE_t *) UART6_BASE_ADDRESS)
+#define UART7 ((UART_TYPE_t *) UART7_BASE_ADDRESS)
 #define UARTEnable (*((volatile u32 *) (UART_RCC_ENABLE_BASE_ADDRESS)))
 #define UARTReady (*((volatile u32 *) UART_PRUART_BASE_ADDRESS))
 
