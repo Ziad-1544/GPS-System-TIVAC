@@ -265,7 +265,7 @@ void INT_voidPORTE_Enable(u8 Copy_u8PinID ){
     GPIO_stdErrorSetInterruptBothEdges(PortE, Copy_u8PinID, 0);
     GPIO_stdErrorSetInterruptEvent(PortE, Copy_u8PinID, PORTE_EVENT); 
     GPIO_stdErrorSetInterruptClear(PortE, Copy_u8PinID, 1);   
-    GPIO_stdErrorSetInterruptMask(PortE, 0xFF);    
+    GPIO_stdErrorSetInterruptMask(PortE, 0x08);    
     __enable_irq();
 }
 
