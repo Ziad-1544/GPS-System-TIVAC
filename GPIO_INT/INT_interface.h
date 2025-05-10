@@ -13,8 +13,8 @@
 #define EDGE 0
 #define LEVEL 1
 
-#define HIGH 1
-#define LOW 0
+#define HIGH 0
+#define LOW 1
 
 void INT_voidPORTA_Enable(u8 Copy_u8PinID );
 void INT_voidPORTB_Enable(u8 Copy_u8PinID );
