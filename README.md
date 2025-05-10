@@ -180,7 +180,7 @@ The fourth red switch triggers an interrupt, generating a report of all visited 
 This GPS System on Tiva C successfully demonstrates real-time location tracking using GPS data, integrated with custom-built drivers for UART, GPIO, EEPROM, interrupts, and peripheral interfaces. Through modular development and milestone-based validation, the system can detect known locations, calculate distances, log visit history, and respond to user input efficiently. The project highlights practical embedded systems design, interrupt-driven control, and structured data handling in a resource-constrained environment.
 
 ---
-
+<div style="text-align:center">
 👨‍💻 Team members:
 
 | Name           | Member Photo                                                                 |
