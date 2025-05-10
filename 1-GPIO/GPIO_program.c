@@ -3,8 +3,8 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  MCAL           /////////
 /////                GPIO              /////////
-////                Version:2.0       /////////
-///         DATE:   4-25-2025        /////////
+////                Version:3.0       /////////
+///         DATE:   5-10-2025        /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
 #include "STD_TYPES.h"
@@ -401,6 +401,66 @@ STD_ERROR GPIO_StdErrorSetPinPadConfig(u32 Copy_u32Port, u8 Copy_u8PinId, GPIO_P
         CLR_BIT(Local_Port->GPIOCR, Copy_u8PinId);
     }
     
+    Local_FunctionStatus = OK;
+    return Local_FunctionStatus;
+}
+
+STD_ERROR GPIO_stdErrorInterruptConfig(u32 Copy_u32Port, u8 Copy_u8PinId,u8 Copy_u8ICR,u8 Copy_u8IS,u8 Copy_u8MIS,u8 Copy_u8IBE,u8 Copy_u8IEV){
+    STD_ERROR Local_FunctionStatus = NOK;
+    volatile GPIO_PORT_t* Local_Port = NULL;
+
+    switch(Copy_u32Port) {
+        case PortA: Local_Port = GPIO_PORTA; break;
+        case PortB: Local_Port = GPIO_PORTB; break;
+        case PortC: Local_Port = GPIO_PORTC; break;
+        case PortD: Local_Port = GPIO_PORTD; break;
+        case PortE: Local_Port = GPIO_PORTE; break;
+        case PortF: Local_Port = GPIO_PORTF; break;
+        default: return NOK;
+    }
+
+    if(Copy_u8PinId > PIN7) {
+        return NOK;
+    }
+    
+    GPIO_StdErrorInit(Copy_u32Port);
+    
+    // Configure interrupt
+    // Clear any previous interrupt
+    if(Copy_u8ICR == PIN_HIGH) {
+        SET_BIT(Local_Port->GPIOICR, Copy_u8PinId);  // Clear interrupt
+    } else {
+        CLR_BIT(Local_Port->GPIOICR, Copy_u8PinId);  // Don't clear interrupt
+    }
+    
+    // Configure interrupt sense (edge or level)
+    if(Copy_u8IS == PIN_HIGH) {
+        SET_BIT(Local_Port->GPIOIS, Copy_u8PinId);  // Level-sensitive
+    } else {
+        CLR_BIT(Local_Port->GPIOIS, Copy_u8PinId);  // Edge-sensitive
+    }
+    
+    // Configure both edges or single edge
+    if(Copy_u8IBE == PIN_HIGH) {
+        SET_BIT(Local_Port->GPIOIBE, Copy_u8PinId); // Both edges
+    } else {
+        CLR_BIT(Local_Port->GPIOIBE, Copy_u8PinId); // Single edge 
+    }
+    
+    // Configure rising or falling edge
+    if(Copy_u8IEV == PIN_HIGH) {
+        SET_BIT(Local_Port->GPIOIEV, Copy_u8PinId); // Rising edge or high level
+    } else {
+        CLR_BIT(Local_Port->GPIOIEV, Copy_u8PinId); // Falling edge or low level
+    }
+    
+    // Set the interrupt mask based on MIS parameter
+    if(Copy_u8MIS == PIN_HIGH) {
+        SET_BIT(Local_Port->GPIOIM, Copy_u8PinId);  // Enable interrupt
+    } else {
+        CLR_BIT(Local_Port->GPIOIM, Copy_u8PinId);  // Disable interrupt
+    }
+
     Local_FunctionStatus = OK;
     return Local_FunctionStatus;
 }

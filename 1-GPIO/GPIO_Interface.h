@@ -3,8 +3,8 @@
 ///////     Intro To Embedded Project    /////////
 //////           Layer:  MCAL           /////////
 /////                GPIO              /////////
-////                Version:2.0       /////////
-///         DATE:   4-25-2025        /////////
+////                Version:3.0       /////////
+///         DATE:   5-10-2025        /////////
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
 #ifndef GPIO_INTERFACE_H_
@@ -20,7 +20,13 @@ typedef struct {
     u32 Non_Usable[254];        //for all combination of pins but nvm we will use only last one
     u32 GPIO_WRITE_DATA;        //that is the last one 
     u32 GPIODIR;
-    u32 Non_Usable2[7];         //interrupts 
+    u32 GPIOIS;                 // Interrupt Sense
+    u32 GPIOIBE;                // Interrupt Both Edges
+    u32 GPIOIEV;                // Interrupt Event
+    u32 GPIOIM;                 // Interrupt Mask
+    u32 GPIORIS;                // Raw Interrupt Status
+    u32 GPIOMIS;                // Masked Interrupt Status
+    u32 GPIOICR;                // Interrupt Clear
     u32 GPIOAFSEL;
     u32 Non_Usable3[59]; 
     u32 GPIOPUR;                //pull up
@@ -105,6 +111,8 @@ STD_ERROR GPIO_StdErrorReadPort(u32 Copy_u32Port, u8* Copy_ptru8ReturnValue);
 STD_ERROR GPIO_StdErrorSetPinAlternateFunction(u32 Copy_u32Port, u8 Copy_u8PinId, u8 Copy_u8PinValue, u8 Copy_u8AltFunc);
 STD_ERROR GPIO_StdErrorPinAnalogModeSelect(u32 Copy_u32Port, u8 Copy_u8PinId, u8 Copy_u8PinValue);
 STD_ERROR GPIO_StdErrorSetPinPadConfig(u32 Copy_u32Port, u8 Copy_u8PinId, GPIO_PadConfig_t* Copy_PtrGPIO_PadConfig_tConfig);
+STD_ERROR GPIO_stdErrorInterruptConfig(u32 Copy_u32Port, u8 Copy_u8PinId,u8 Copy_u8ICR,u8 Copy_u8IS,u8 Copy_u8MIS,u8 Copy_u8IBE,u8 Copy_u8IEV);
+
 //STD_ERROR GPIO_PinCommit(u32 Port, u8 Copy_PinId, u8 Copy_Value);
 //STD_ERROR GPIO_PinDigitalEnable(u32 Port, u8 Copy_PinId, u8 Copy_Value);
 
