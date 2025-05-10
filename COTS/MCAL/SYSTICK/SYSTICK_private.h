@@ -9,8 +9,7 @@
 ////////////////////////////////////////////
 #ifndef STK_PRIVATE_H_
 #define STK_PRIVATE_H_
-
-#include "STD_TYPES.h"
+#include "../../LIB/STD/STD_TYPES.h"
 
 typedef struct STK_RegDef_t
 {

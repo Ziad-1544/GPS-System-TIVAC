@@ -8,8 +8,8 @@
 //         AUTHOR: Ziad Kassem      /////////
 ////////////////////////////////////////////
 
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD/STD_TYPES.h"
+#include "../../LIB/BITMATH/BIT_MATH.h"
 #include "SYSTICK_interface.h"
 #include "SYSTICK_config.h"
 #include "SYSTICK_private.h"
