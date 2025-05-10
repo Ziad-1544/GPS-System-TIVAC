@@ -11,7 +11,8 @@
 
 void PeripheralsInit(void){
     UART_CONFIG_t uart2configuration; 
-    
+    GPIO_PadConfig_t GPIO_PF2;
+
     uart2configuration.Module = UART2;
     uart2configuration.DataBits = DataBits8;
     uart2configuration.StopBits = OneStopBit;
@@ -19,14 +20,23 @@ void PeripheralsInit(void){
     uart2configuration.Parity = OddParity; // doesnt matter already disabled
     uart2configuration.BaudRate = 9600;
 
+ 
+    GPIO_PF2.resType = GPIO_PULL_DOWN; // Pull-down resistor
+    GPIO_PF2.lockFlag = GPIO_UNLOCKED; // Unlocked
+    GPIO_PF2.slewRate = GPIO_SLEW_RATE_DISABLE; // Slew rate enabled
+
     //Switch Initialization
     GPIO_StdErrorInit(PortA);
 	GPIO_StdErrorInit(PortB);
     GPIO_StdErrorInit(PortC);
-    GPIO_StdErrorInit(PortD);
+    GPIO_StdErrorInit(PortF);
 
     //Switch Initialization
-    SW_StdErrorInitExternal(PortC, PIN6);
+    SW_StdErrorInitExternal(PortC, PIN4); //Slide Show "Exit" Button // bony
+    SW_StdErrorInitExternal(PortC, PIN5); //Slide Show "Enter" Button // a5dar
+    SW_StdErrorInitExternal(PortC, PIN6); //Main_Functionality //ahmar
+    SW_StdErrorInitExternal(PortC, PIN7); //Slide Show turn on and choose location   // Azra2
+
     SW_StdErrorInitExternal(PortE, PIN3);
 
     //Interrupt Switch For the Report
@@ -47,7 +57,8 @@ void PeripheralsInit(void){
     EEPROM_STD_ERROR_Init();
 
     //Buzzer Initialization
-    GPIO_StdErrorSetPinDir(PortD, PIN0, PIN_OUTPUT);
+    GPIO_StdErrorSetPinDir(PortF, PIN2, PIN_OUTPUT);
+    GPIO_StdErrorSetPinPadConfig(PortF, PIN2, &GPIO_PF2); 
 
 
 }
@@ -58,16 +69,14 @@ void BuzzerTrigger(void){
     
     for(i = 0; i < 2; i++) {
         // G note
-        GPIO_StdErrorWritePin(PortD, PIN0, PIN_HIGH);
+        GPIO_StdErrorWritePin(PortF, PIN2, PIN_HIGH);
         Systick_StdErrorDelayIn_ms(300);
-        GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
+        GPIO_StdErrorWritePin(PortF, PIN2, PIN_LOW);
         Systick_StdErrorDelayIn_ms(100);
     }
-    GPIO_StdErrorWritePin(PortD, PIN0, PIN_HIGH);
+    GPIO_StdErrorWritePin(PortF, PIN2, PIN_HIGH);
     Systick_StdErrorDelayIn_ms(1000);
-    GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
-    Systick_StdErrorDelayIn_ms(1500);
-    GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
+    GPIO_StdErrorWritePin(PortF, PIN2, PIN_LOW);
 }
 
 void TurnOffAllLeds(void){
@@ -116,3 +125,5 @@ void StringCopy(u8 *destination, u8 *source, u8 maxLength) {
     // Null-terminate the destination string
     destination[i] = '\0';
 }
+
+

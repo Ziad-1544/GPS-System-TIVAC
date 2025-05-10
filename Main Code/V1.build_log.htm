@@ -10,9 +10,6 @@ Project File Date:  05/09/2025
 Rebuild target 'Target 1'
 assembling startup_TM4C123.s...
 compiling APP.c...
-INT_interface.h(32): warning:  #1-D: last line of file ends without a newline
-  #endif
-APP.c: 1 warning, 0 errors
 compiling CLCD_program.c...
 compiling EEPROM_program.c...
 EEPROM_program.c(51): warning:  #188-D: enumerated type mixed with another type
@@ -30,11 +27,9 @@ GPS_program.c(111): warning:  #177-D: variable "Local_u8ValidFlag" was declared 
 GPS_program.c: 1 warning, 0 errors
 compiling LED_program.c...
 compiling main.c...
-INT_interface.h(32): warning:  #1-D: last line of file ends without a newline
-  #endif
-main.c(73): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+main.c(78): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
              strcpy(NearestLoc.name, "ZIAD");
-main.c: 2 warnings, 0 errors
+main.c: 1 warning, 0 errors
 compiling SW_program.c...
 compiling system_TM4C123.c...
 compiling SYSTICK_program.c...
@@ -42,6 +37,16 @@ compiling UART_program.c...
 UART_program.c(197): warning:  #1035-D: single-precision operand implicitly converted to double-precision
       Copy_ptrConfig->Module->FBRD = (u32)(((Local_f32ClockDivisor - (u32)Local_f32ClockDivisor)*64) + 0.5); // Known formula
 UART_program.c: 1 warning, 0 errors
+compiling INT_program.c...
+linking...
+Program Size: Code=18488 RO-data=1112 RW-data=516 ZI-data=868  
+".\V1.axf" - 0 Error(s), 6 Warning(s).
+Load "D:\\Junior\\SPRING 2025\\EMBEDDED\\project-gps\\Main Code\\V1.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+.c: 1 warning, 0 errors
 compiling INT_program.c...
 INT_interface.h(32): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -52,13 +57,11 @@ INT_config.h(37): warning:  #1-D: last line of file ends without a newline
 INT_program.c(402): warning:  #1-D: last line of file ends without a newline
   }
 INT_program.c: 4 warnings, 0 errors
-linking...
-Program Size: Code=18040 RO-data=1112 RW-data=504 ZI-data=864  
-".\V1.axf" - 0 Error(s), 12 Warning(s).
-Load "D:\\Junior\\SPRING 2025\\EMBEDDED\\project-gps\\Main Code\\V1.axf" 
+".\V1.axf" - 1 Error(s), 12 Warning(s).
+Target not created
+V1.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
 Verify OK.
- Download failed  -  "Cortex-M4"
- has been cancelled
+ash Download failed  -  Target DLL has been cancelled

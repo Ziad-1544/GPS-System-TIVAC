@@ -14,6 +14,12 @@
 #define YELLOW_LED_THRESHOLD 25
 #define GREEN_LED_THRESHOLD 10
 
+#define MAX_DISTANCE_THRESHOLD 1000
+
+#define TURNED_ON 1
+#define TURNED_OFF 0
+
+#define SLIDE_SHOW_MODE TURNED_ON
 
 typedef struct{
     u8 name [15];

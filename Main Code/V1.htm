@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\V1.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\V1.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat May 10 00:39:10 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat May 10 18:29:09 2025
 <BR><P>
 <H3>Maximum Stack Usage =        384 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -228,7 +228,7 @@ Function Pointers
  <LI><a href="#[4c]">TIMER4B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4d]">TIMER5A_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4e]">TIMER5B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
- <LI><a href="#[ce]">TimeVisitedReport</a> from main.o(.text) referenced from main.o(.text)
+ <LI><a href="#[cf]">TimeVisitedReport</a> from main.o(.text) referenced from main.o(.text)
  <LI><a href="#[11]">UART0_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[12]">UART1_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[2d]">UART2_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
@@ -1172,13 +1172,14 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[8d]"></a>PeripheralsInit</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, app.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = PeripheralsInit &rArr; UART_StdErrorInit &rArr; UART_StdErrorRcc &rArr; GPIO_StdErrorInit &rArr; GPIO_StdErrorPortUnlock
+<P><STRONG><a name="[8d]"></a>PeripheralsInit</STRONG> (Thumb, 174 bytes, Stack size 24 bytes, app.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = PeripheralsInit &rArr; UART_StdErrorInit &rArr; UART_StdErrorRcc &rArr; GPIO_StdErrorInit &rArr; GPIO_StdErrorPortUnlock
 </UL>
 <BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorInit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitExternal
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidInitExternalLed
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT_voidPORTE_Enable
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinPadConfig
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinDir
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorInit
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_Init
@@ -1187,138 +1188,138 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[96]"></a>BuzzerTrigger</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, app.o(.text))
+<P><STRONG><a name="[97]"></a>BuzzerTrigger</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, app.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = BuzzerTrigger &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[99]"></a>TurnOffAllLeds</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, app.o(.text))
+<P><STRONG><a name="[9a]"></a>TurnOffAllLeds</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, app.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TurnOffAllLeds &rArr; LED_voidTurnOffLed &rArr; GPIO_StdErrorWritePin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidTurnOffLed
+<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidTurnOffLed
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9b]"></a>EEPROM_TimesVisitedIncrement</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, app.o(.text))
+<P><STRONG><a name="[9c]"></a>EEPROM_TimesVisitedIncrement</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, app.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = EEPROM_TimesVisitedIncrement &rArr; EEPROM_STD_ERROR_WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_u32ReadData
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_WriteData
+<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_u32ReadData
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_WriteData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9e]"></a>ConvertUTCtoLocalTime</STRONG> (Thumb, 346 bytes, Stack size 64 bytes, app.o(.text))
+<P><STRONG><a name="[9f]"></a>ConvertUTCtoLocalTime</STRONG> (Thumb, 346 bytes, Stack size 64 bytes, app.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = ConvertUTCtoLocalTime &rArr; __aeabi_d2uiz
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d2]"></a>StringCopy</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, app.o(.text))
+<P><STRONG><a name="[d3]"></a>StringCopy</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, app.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = StringCopy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a5]"></a>CLCD_StdErrorDataPinssendCommand</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, clcd_program.o(.text))
+<P><STRONG><a name="[a6]"></a>CLCD_StdErrorDataPinssendCommand</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, clcd_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = CLCD_StdErrorDataPinssendCommand &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePort
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePort
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidClearDisplay
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSetCursor
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidClearDisplay
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSetCursor
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinsInit
 </UL>
 
 <P><STRONG><a name="[92]"></a>CLCD_StdErrorDataPinsInit</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, clcd_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = CLCD_StdErrorDataPinsInit &rArr; CLCD_StdErrorDataPinssendCommand &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPortDir
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPortDir
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinDir
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeripheralsInit
 </UL>
 
-<P><STRONG><a name="[a8]"></a>CLCD_StdErrorSendData</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, clcd_program.o(.text))
+<P><STRONG><a name="[a9]"></a>CLCD_StdErrorSendData</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, clcd_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = CLCD_StdErrorSendData &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePort
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePort
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSendString
+<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSendString
 </UL>
 
-<P><STRONG><a name="[a9]"></a>CLCD_VoidDataSendString</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, clcd_program.o(.text))
+<P><STRONG><a name="[aa]"></a>CLCD_VoidDataSendString</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, clcd_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = CLCD_VoidDataSendString &rArr; CLCD_StdErrorSendData &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
+<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
 </UL>
 
-<P><STRONG><a name="[aa]"></a>CLCD_VoidDataSetCursor</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, clcd_program.o(.text))
+<P><STRONG><a name="[ab]"></a>CLCD_VoidDataSetCursor</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, clcd_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = CLCD_VoidDataSetCursor &rArr; CLCD_StdErrorDataPinssendCommand &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
+<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
 </UL>
 
-<P><STRONG><a name="[ab]"></a>CLCD_VoidClearDisplay</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, clcd_program.o(.text))
+<P><STRONG><a name="[ac]"></a>CLCD_VoidClearDisplay</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, clcd_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = CLCD_VoidClearDisplay &rArr; CLCD_StdErrorDataPinssendCommand &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
 </UL>
 
-<P><STRONG><a name="[ac]"></a>CLCD_VoidSendNum</STRONG> (Thumb, 90 bytes, Stack size 224 bytes, clcd_program.o(.text))
+<P><STRONG><a name="[ad]"></a>CLCD_VoidSendNum</STRONG> (Thumb, 90 bytes, Stack size 224 bytes, clcd_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = CLCD_VoidSendNum &rArr; CLCD_StdErrorSendData &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
 </UL>
 
-<P><STRONG><a name="[ae]"></a>EEPROM_voidSoftwareReset</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, eeprom_program.o(.text))
+<P><STRONG><a name="[af]"></a>EEPROM_voidSoftwareReset</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, eeprom_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = EEPROM_voidSoftwareReset &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidFixError
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidFixError
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_Init
 </UL>
 
-<P><STRONG><a name="[af]"></a>EEPROM_voidFixError</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, eeprom_program.o(.text))
+<P><STRONG><a name="[b0]"></a>EEPROM_voidFixError</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, eeprom_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = EEPROM_voidFixError &rArr; EEPROM_voidSoftwareReset &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidSoftwareReset
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidSoftwareReset
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_Init
 </UL>
@@ -1326,51 +1327,51 @@ Global Symbols
 <P><STRONG><a name="[94]"></a>EEPROM_STD_ERROR_Init</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, eeprom_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = EEPROM_STD_ERROR_Init &rArr; EEPROM_voidFixError &rArr; EEPROM_voidSoftwareReset &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidFixError
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidSoftwareReset
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidFixError
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidSoftwareReset
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeripheralsInit
 </UL>
 
-<P><STRONG><a name="[b0]"></a>EEPROM_voidConfigBlockOffset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, eeprom_program.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_MassEraseData
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_u32ReadData
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_WriteData
+<P><STRONG><a name="[b1]"></a>EEPROM_voidConfigBlockOffset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, eeprom_program.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_MassEraseData
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_u32ReadData
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_WriteData
 </UL>
 
-<P><STRONG><a name="[9c]"></a>EEPROM_u32ReadData</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, eeprom_program.o(.text))
+<P><STRONG><a name="[9d]"></a>EEPROM_u32ReadData</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, eeprom_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EEPROM_u32ReadData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidConfigBlockOffset
+<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidConfigBlockOffset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_TimesVisitedIncrement
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_TimesVisitedIncrement
 </UL>
 
-<P><STRONG><a name="[9d]"></a>EEPROM_STD_ERROR_WriteData</STRONG> (Thumb, 48 bytes, Stack size 12 bytes, eeprom_program.o(.text))
+<P><STRONG><a name="[9e]"></a>EEPROM_STD_ERROR_WriteData</STRONG> (Thumb, 48 bytes, Stack size 12 bytes, eeprom_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = EEPROM_STD_ERROR_WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidConfigBlockOffset
+<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidConfigBlockOffset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_TimesVisitedIncrement
+<BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_TimesVisitedIncrement
 </UL>
 
-<P><STRONG><a name="[b1]"></a>EEPROM_STD_ERROR_MassEraseData</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, eeprom_program.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidConfigBlockOffset
+<P><STRONG><a name="[b2]"></a>EEPROM_STD_ERROR_MassEraseData</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, eeprom_program.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidConfigBlockOffset
 </UL>
 
 <P><STRONG><a name="[8e]"></a>GPIO_StdErrorInit</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = GPIO_StdErrorInit &rArr; GPIO_StdErrorPortUnlock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPortUnlock
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPortCommit
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPortDigitalEnable
+<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPortUnlock
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPortCommit
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPortDigitalEnable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorRcc
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitInternal
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_VoidInitInternalLeds
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitInternal
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_VoidInitInternalLeds
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitExternal
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidInitExternalLed
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeripheralsInit
@@ -1379,48 +1380,48 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>GPIO_StdErrorSetPinDir</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GPIO_StdErrorSetPinDir
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitInternal
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_VoidInitInternalLeds
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitInternal
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_VoidInitInternalLeds
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitExternal
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidInitExternalLed
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinsInit
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeripheralsInit
 </UL>
 
-<P><STRONG><a name="[a7]"></a>GPIO_StdErrorSetPortDir</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, gpio_program.o(.text))
+<P><STRONG><a name="[a8]"></a>GPIO_StdErrorSetPortDir</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = GPIO_StdErrorSetPortDir
 </UL>
 <BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinsInit
 </UL>
 
-<P><STRONG><a name="[97]"></a>GPIO_StdErrorWritePin</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, gpio_program.o(.text))
+<P><STRONG><a name="[98]"></a>GPIO_StdErrorWritePin</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GPIO_StdErrorWritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidToggleExternalLed
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidTurnOnLed
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_StdErrorSetInternalLedValue
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_VoidInitInternalLeds
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidTurnOffLed
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidToggleExternalLed
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidTurnOnLed
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_StdErrorSetInternalLedValue
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_VoidInitInternalLeds
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidTurnOffLed
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidInitExternalLed
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuzzerTrigger
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuzzerTrigger
 </UL>
 
-<P><STRONG><a name="[cd]"></a>GPIO_StdErrorReadPin</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, gpio_program.o(.text))
+<P><STRONG><a name="[ce]"></a>GPIO_StdErrorReadPin</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GPIO_StdErrorReadPin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_u8InternalSWIsPressed
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_u8ExternalSWIsPressed
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidToggleExternalLed
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_u8ExternalSWIsPressed
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidToggleExternalLed
 </UL>
 
-<P><STRONG><a name="[a6]"></a>GPIO_StdErrorWritePort</STRONG> (Thumb, 64 bytes, Stack size 12 bytes, gpio_program.o(.text))
+<P><STRONG><a name="[a7]"></a>GPIO_StdErrorWritePort</STRONG> (Thumb, 64 bytes, Stack size 12 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = GPIO_StdErrorWritePort
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
 </UL>
 
 <P><STRONG><a name="[132]"></a>GPIO_StdErrorReadPort</STRONG> (Thumb, 70 bytes, Stack size 12 bytes, gpio_program.o(.text), UNUSED)
@@ -1435,199 +1436,200 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GPIO_StdErrorPinAnalogModeSelect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorRcc
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitInternal
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitInternal
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitExternal
 </UL>
 
-<P><STRONG><a name="[d4]"></a>GPIO_StdErrorSetPinPadConfig</STRONG> (Thumb, 246 bytes, Stack size 16 bytes, gpio_program.o(.text))
+<P><STRONG><a name="[96]"></a>GPIO_StdErrorSetPinPadConfig</STRONG> (Thumb, 246 bytes, Stack size 16 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GPIO_StdErrorSetPinPadConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitInternal
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitInternal
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_StdErrorInitExternal
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeripheralsInit
 </UL>
 
-<P><STRONG><a name="[b5]"></a>GPS_ConvertToDecimalDegrees</STRONG> (Thumb, 166 bytes, Stack size 40 bytes, gps_program.o(.text))
+<P><STRONG><a name="[b6]"></a>GPS_ConvertToDecimalDegrees</STRONG> (Thumb, 166 bytes, Stack size 40 bytes, gps_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = GPS_ConvertToDecimalDegrees &rArr; __aeabi_d2uiz
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
 </UL>
 
-<P><STRONG><a name="[b7]"></a>GPS_f64ToRadians</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, gps_program.o(.text))
+<P><STRONG><a name="[b8]"></a>GPS_f64ToRadians</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, gps_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = GPS_f64ToRadians &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
 </UL>
 
-<P><STRONG><a name="[b9]"></a>GPS_f64GetDistance_ArgInDegrees</STRONG> (Thumb, 616 bytes, Stack size 136 bytes, gps_program.o(.text))
+<P><STRONG><a name="[ba]"></a>GPS_f64GetDistance_ArgInDegrees</STRONG> (Thumb, 616 bytes, Stack size 136 bytes, gps_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 376<LI>Call Chain = GPS_f64GetDistance_ArgInDegrees &rArr; __hardfp_sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64ToRadians
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64ToRadians
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_IsWithinRadius
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_IsWithinRadius
 </UL>
 
-<P><STRONG><a name="[c0]"></a>GPS_CustomStringToFloat</STRONG> (Thumb, 334 bytes, Stack size 48 bytes, gps_program.o(.text))
+<P><STRONG><a name="[c1]"></a>GPS_CustomStringToFloat</STRONG> (Thumb, 334 bytes, Stack size 48 bytes, gps_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = GPS_CustomStringToFloat &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
 </UL>
 
-<P><STRONG><a name="[c2]"></a>GPS_stdStatusGetLocation</STRONG> (Thumb, 368 bytes, Stack size 176 bytes, gps_program.o(.text))
+<P><STRONG><a name="[c3]"></a>GPS_stdStatusGetLocation</STRONG> (Thumb, 368 bytes, Stack size 176 bytes, gps_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = GPS_stdStatusGetLocation &rArr; GPS_CustomStringToFloat &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtok_r
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_CustomStringToFloat
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusReadNMEASentence
+<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtok_r
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_CustomStringToFloat
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusReadNMEASentence
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusWaitForValidData
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusWaitForValidData
 </UL>
 
-<P><STRONG><a name="[c6]"></a>GPS_stdStatusWaitForValidData</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, gps_program.o(.text))
+<P><STRONG><a name="[c7]"></a>GPS_stdStatusWaitForValidData</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, gps_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = GPS_stdStatusWaitForValidData &rArr; GPS_stdStatusGetLocation &rArr; GPS_CustomStringToFloat &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
+<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[c7]"></a>GPS_IsWithinRadius</STRONG> (Thumb, 116 bytes, Stack size 56 bytes, gps_program.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<P><STRONG><a name="[c8]"></a>GPS_IsWithinRadius</STRONG> (Thumb, 116 bytes, Stack size 56 bytes, gps_program.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
 </UL>
 
-<P><STRONG><a name="[c9]"></a>LED_VoidInitInternalLeds</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, led_program.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<P><STRONG><a name="[ca]"></a>LED_VoidInitInternalLeds</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, led_program.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinDir
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorInit
 </UL>
 
-<P><STRONG><a name="[ca]"></a>LED_StdErrorSetInternalLedValue</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, led_program.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<P><STRONG><a name="[cb]"></a>LED_StdErrorSetInternalLedValue</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, led_program.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
 </UL>
 
 <P><STRONG><a name="[91]"></a>LED_voidInitExternalLed</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, led_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = LED_voidInitExternalLed &rArr; GPIO_StdErrorInit &rArr; GPIO_StdErrorPortUnlock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinDir
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeripheralsInit
 </UL>
 
-<P><STRONG><a name="[cb]"></a>LED_voidTurnOnLed</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, led_program.o(.text))
+<P><STRONG><a name="[cc]"></a>LED_voidTurnOnLed</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, led_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = LED_voidTurnOnLed &rArr; GPIO_StdErrorWritePin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9a]"></a>LED_voidTurnOffLed</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, led_program.o(.text))
+<P><STRONG><a name="[9b]"></a>LED_voidTurnOffLed</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, led_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = LED_voidTurnOffLed &rArr; GPIO_StdErrorWritePin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TurnOffAllLeds
-</UL>
-
-<P><STRONG><a name="[cc]"></a>LED_voidToggleExternalLed</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, led_program.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorReadPin
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TurnOffAllLeds
 </UL>
 
-<P><STRONG><a name="[ce]"></a>TimeVisitedReport</STRONG> (Thumb, 162 bytes, Stack size 8 bytes, main.o(.text))
+<P><STRONG><a name="[cd]"></a>LED_voidToggleExternalLed</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, led_program.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorReadPin
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+</UL>
+
+<P><STRONG><a name="[cf]"></a>TimeVisitedReport</STRONG> (Thumb, 162 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = TimeVisitedReport &rArr; CLCD_VoidSendNum &rArr; CLCD_StdErrorSendData &rArr; Systick_StdErrorDelayIn_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidClearDisplay
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSetCursor
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSendString
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_u32ReadData
+<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidClearDisplay
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSetCursor
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSendString
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_u32ReadData
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.text)
 </UL>
-<P><STRONG><a name="[87]"></a>main</STRONG> (Thumb, 672 bytes, Stack size 8 bytes, main.o(.text))
+<P><STRONG><a name="[87]"></a>main</STRONG> (Thumb, 1328 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = main &rArr; GPS_f64GetDistance_ArgInDegrees &rArr; __hardfp_sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_u8ExternalSWIsPressed
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT_voidFunc
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidTurnOnLed
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusWaitForValidData
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidClearDisplay
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSetCursor
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSendString
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_u32ReadData
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StringCopy
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_TimesVisitedIncrement
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TurnOffAllLeds
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuzzerTrigger
+<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW_u8ExternalSWIsPressed
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT_voidFunc
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidTurnOnLed
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusWaitForValidData
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidClearDisplay
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSetCursor
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidDataSendString
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorWritePin
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_u32ReadData
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StringCopy
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_TimesVisitedIncrement
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TurnOffAllLeds
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuzzerTrigger
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeripheralsInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[d3]"></a>SW_StdErrorInitInternal</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, sw_program.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinPadConfig
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPinAnalogModeSelect
+<P><STRONG><a name="[d4]"></a>SW_StdErrorInitInternal</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, sw_program.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPinAnalogModeSelect
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinPadConfig
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinDir
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorInit
 </UL>
 
 <P><STRONG><a name="[d6]"></a>SW_u8InternalSWIsPressed</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, sw_program.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorReadPin
+<BR><BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorReadPin
 </UL>
 
 <P><STRONG><a name="[8f]"></a>SW_StdErrorInitExternal</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, sw_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = SW_StdErrorInitExternal &rArr; GPIO_StdErrorInit &rArr; GPIO_StdErrorPortUnlock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinPadConfig
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPinAnalogModeSelect
+<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorPinAnalogModeSelect
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinPadConfig
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorSetPinDir
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeripheralsInit
 </UL>
 
-<P><STRONG><a name="[d0]"></a>SW_u8ExternalSWIsPressed</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, sw_program.o(.text))
+<P><STRONG><a name="[d1]"></a>SW_u8ExternalSWIsPressed</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, sw_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SW_u8ExternalSWIsPressed &rArr; GPIO_StdErrorReadPin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorReadPin
+<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorReadPin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1640,26 +1642,26 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(.text)
 </UL>
 <P><STRONG><a name="[d9]"></a>Systick_StdErrorDelayInTicks</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, systick_program.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
+<BR><BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayIn_ms
 </UL>
 
-<P><STRONG><a name="[98]"></a>Systick_StdErrorDelayIn_ms</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, systick_program.o(.text))
+<P><STRONG><a name="[99]"></a>Systick_StdErrorDelayIn_ms</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, systick_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Systick_StdErrorDelayIn_ms
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_StdErrorDelayInTicks
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidToggleExternalLed
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidFixError
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidSoftwareReset
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidClearDisplay
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimeVisitedReport
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_voidToggleExternalLed
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidFixError
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_voidSoftwareReset
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidClearDisplay
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorSendData
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinssendCommand
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_STD_ERROR_Init
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_StdErrorDataPinsInit
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuzzerTrigger
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuzzerTrigger
 </UL>
 
 <P><STRONG><a name="[133]"></a>Systick_VoidReset</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, systick_program.o(.text), UNUSED)
@@ -1672,10 +1674,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = UART_StdErrorInit &rArr; UART_StdErrorRcc &rArr; GPIO_StdErrorInit &rArr; GPIO_StdErrorPortUnlock
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorRcc
 </UL>
@@ -1684,8 +1686,8 @@ Global Symbols
 
 <P><STRONG><a name="[136]"></a>UART_StdErrorSendByte</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, uart_program.o(.text), UNUSED)
 
-<P><STRONG><a name="[bf]"></a>UART_StdErrorReceiveByte</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, uart_program.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusReadNMEASentence
+<P><STRONG><a name="[c0]"></a>UART_StdErrorReceiveByte</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, uart_program.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusReadNMEASentence
 </UL>
 
 <P><STRONG><a name="[eb]"></a>GPIO_stdErrorGetInterruptStatus</STRONG> (Thumb, 90 bytes, Stack size 20 bytes, int_program.o(.text))
@@ -1837,7 +1839,7 @@ Global Symbols
 
 <P><STRONG><a name="[137]"></a>INT_voidGPIO_DisableGlobal</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, int_program.o(.text), UNUSED)
 
-<P><STRONG><a name="[cf]"></a>INT_voidFunc</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, int_program.o(.text))
+<P><STRONG><a name="[d0]"></a>INT_voidFunc</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, int_program.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1893,26 +1895,26 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__strtok_internal
 </UL>
 
-<P><STRONG><a name="[c4]"></a>strtok_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, strtok_r.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
+<P><STRONG><a name="[c5]"></a>strtok_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, strtok_r.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
 </UL>
 
-<P><STRONG><a name="[c3]"></a>strstr</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, strstr.o(.text))
+<P><STRONG><a name="[c4]"></a>strstr</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, strstr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
 </UL>
 
-<P><STRONG><a name="[d1]"></a>strcpy</STRONG> (Thumb, 72 bytes, Stack size 12 bytes, strcpy.o(.text))
+<P><STRONG><a name="[d2]"></a>strcpy</STRONG> (Thumb, 72 bytes, Stack size 12 bytes, strcpy.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[ad]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
+<P><STRONG><a name="[ae]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_memclr4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
+<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLCD_VoidSendNum
 </UL>
 
 <P><STRONG><a name="[138]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
@@ -1936,9 +1938,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
+<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
 </UL>
 
 <P><STRONG><a name="[ed]"></a>__strtok_internal</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, strtok_int.o(.text), UNUSED)
@@ -2010,12 +2012,12 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = __hardfp_atan &rArr; __kernel_poly &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fabs
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
@@ -2023,92 +2025,92 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
 
-<P><STRONG><a name="[bd]"></a>__hardfp_atan2</STRONG> (Thumb, 416 bytes, Stack size 48 bytes, atan2.o(i.__hardfp_atan2))
+<P><STRONG><a name="[be]"></a>__hardfp_atan2</STRONG> (Thumb, 416 bytes, Stack size 48 bytes, atan2.o(i.__hardfp_atan2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = __hardfp_atan2 &rArr; atan &rArr; __hardfp_atan &rArr; __kernel_poly &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fabs
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
 </UL>
 
-<P><STRONG><a name="[bb]"></a>__hardfp_cos</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, cos.o(i.__hardfp_cos))
+<P><STRONG><a name="[bc]"></a>__hardfp_cos</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, cos.o(i.__hardfp_cos))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = __hardfp_cos &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
+<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
 </UL>
 
-<P><STRONG><a name="[ba]"></a>__hardfp_sin</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, sin.o(i.__hardfp_sin))
+<P><STRONG><a name="[bb]"></a>__hardfp_sin</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, sin.o(i.__hardfp_sin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = __hardfp_sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
+<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
 </UL>
 
-<P><STRONG><a name="[bc]"></a>__hardfp_sqrt</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, sqrt.o(i.__hardfp_sqrt))
+<P><STRONG><a name="[bd]"></a>__hardfp_sqrt</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, sqrt.o(i.__hardfp_sqrt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = __hardfp_sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
 </UL>
 
 <P><STRONG><a name="[fb]"></a>__ieee754_rem_pio2</STRONG> (Thumb, 972 bytes, Stack size 168 bytes, rred.o(i.__ieee754_rem_pio2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = __ieee754_rem_pio2 &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fabs
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dneg
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
 </UL>
 
 <P><STRONG><a name="[fd]"></a>__kernel_cos</STRONG> (Thumb, 322 bytes, Stack size 64 bytes, cos_i.o(i.__kernel_cos))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = __kernel_cos &rArr; __kernel_poly &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
 </UL>
 
 <P><STRONG><a name="[f9]"></a>__kernel_poly</STRONG> (Thumb, 248 bytes, Stack size 24 bytes, poly.o(i.__kernel_poly))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __kernel_poly &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
@@ -2118,22 +2120,22 @@ Global Symbols
 <P><STRONG><a name="[fc]"></a>__kernel_sin</STRONG> (Thumb, 280 bytes, Stack size 72 bytes, sin_i.o(i.__kernel_sin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = __kernel_sin &rArr; __kernel_poly &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
 </UL>
 
 <P><STRONG><a name="[f7]"></a>__mathlib_dbl_underflow</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, dunder.o(i.__mathlib_dbl_underflow))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __mathlib_dbl_underflow &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
@@ -2144,24 +2146,24 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
 </UL>
 
 <P><STRONG><a name="[f8]"></a>fabs</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, fabs.o(i.fabs))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = fabs
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
-<P><STRONG><a name="[c5]"></a>__aeabi_dneg</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, basic.o(x$fpl$basic))
-<BR><BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
+<P><STRONG><a name="[c6]"></a>__aeabi_dneg</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, basic.o(x$fpl$basic))
+<BR><BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
 <P><STRONG><a name="[145]"></a>_dneg</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, basic.o(x$fpl$basic), UNUSED)
@@ -2185,20 +2187,20 @@ Global Symbols
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[b6]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd))
+<P><STRONG><a name="[b7]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_CustomStringToFloat
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_CustomStringToFloat
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorInit
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
 <P><STRONG><a name="[102]"></a>_dadd</STRONG> (Thumb, 332 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
@@ -2211,17 +2213,17 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
 </UL>
 
-<P><STRONG><a name="[9f]"></a>__aeabi_ddiv</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv))
+<P><STRONG><a name="[a0]"></a>__aeabi_ddiv</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorInit
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
 </UL>
 
 <P><STRONG><a name="[105]"></a>_ddiv</STRONG> (Thumb, 552 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv), UNUSED)
@@ -2229,52 +2231,52 @@ Global Symbols
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[a0]"></a>__aeabi_d2iz</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dfix.o(x$fpl$dfix))
+<P><STRONG><a name="[a1]"></a>__aeabi_d2iz</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dfix.o(x$fpl$dfix))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_d2iz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
 <P><STRONG><a name="[106]"></a>_dfix</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, dfix.o(x$fpl$dfix), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[a4]"></a>__aeabi_d2uiz</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu))
+<P><STRONG><a name="[a5]"></a>__aeabi_d2uiz</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_d2uiz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorInit
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
 </UL>
 
 <P><STRONG><a name="[107]"></a>_dfixu</STRONG> (Thumb, 90 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[c1]"></a>__aeabi_i2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt))
-<BR><BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_CustomStringToFloat
+<P><STRONG><a name="[c2]"></a>__aeabi_i2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt))
+<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_CustomStringToFloat
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
 <P><STRONG><a name="[14a]"></a>_dflt</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt), UNUSED)
 
-<P><STRONG><a name="[a1]"></a>__aeabi_ui2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu))
-<BR><BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
+<P><STRONG><a name="[a2]"></a>__aeabi_ui2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu))
+<BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorInit
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
 <P><STRONG><a name="[14b]"></a>_dfltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
 
-<P><STRONG><a name="[c8]"></a>__aeabi_cdcmple</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf))
+<P><STRONG><a name="[c9]"></a>__aeabi_cdcmple</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_cdcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_IsWithinRadius
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_IsWithinRadius
 </UL>
 
 <P><STRONG><a name="[108]"></a>_dcmple</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf), UNUSED)
@@ -2284,18 +2286,18 @@ Global Symbols
 
 <P><STRONG><a name="[14c]"></a>__fpl_dcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, dleqf.o(x$fpl$dleqf), UNUSED)
 
-<P><STRONG><a name="[b8]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul))
+<P><STRONG><a name="[b9]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_dmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_CustomStringToFloat
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64ToRadians
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_CustomStringToFloat
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64ToRadians
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
 <P><STRONG><a name="[10a]"></a>_dmul</STRONG> (Thumb, 332 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul), UNUSED)
@@ -2324,17 +2326,17 @@ Global Symbols
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 </UL>
 
-<P><STRONG><a name="[a2]"></a>__aeabi_drsub</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, daddsub_clz.o(x$fpl$drsb))
+<P><STRONG><a name="[a3]"></a>__aeabi_drsub</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, daddsub_clz.o(x$fpl$drsb))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_drsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_ConvertToDecimalDegrees
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
 <P><STRONG><a name="[10b]"></a>_drsb</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, daddsub_clz.o(x$fpl$drsb), UNUSED)
@@ -2347,19 +2349,19 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
 </UL>
 
-<P><STRONG><a name="[a3]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub))
+<P><STRONG><a name="[a4]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_dsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_f64GetDistance_ArgInDegrees
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertUTCtoLocalTime
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
 
 <P><STRONG><a name="[10d]"></a>_dsub</STRONG> (Thumb, 464 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
@@ -2397,30 +2399,30 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[b4]"></a>GPIO_StdErrorPortDigitalEnable</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, gpio_program.o(.text))
+<P><STRONG><a name="[b5]"></a>GPIO_StdErrorPortDigitalEnable</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = GPIO_StdErrorPortDigitalEnable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorInit
 </UL>
 
-<P><STRONG><a name="[b3]"></a>GPIO_StdErrorPortCommit</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, gpio_program.o(.text))
+<P><STRONG><a name="[b4]"></a>GPIO_StdErrorPortCommit</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = GPIO_StdErrorPortCommit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorInit
 </UL>
 
-<P><STRONG><a name="[b2]"></a>GPIO_StdErrorPortUnlock</STRONG> (Thumb, 86 bytes, Stack size 12 bytes, gpio_program.o(.text))
+<P><STRONG><a name="[b3]"></a>GPIO_StdErrorPortUnlock</STRONG> (Thumb, 86 bytes, Stack size 12 bytes, gpio_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = GPIO_StdErrorPortUnlock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StdErrorInit
 </UL>
 
-<P><STRONG><a name="[be]"></a>GPS_stdStatusReadNMEASentence</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, gps_program.o(.text))
+<P><STRONG><a name="[bf]"></a>GPS_stdStatusReadNMEASentence</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, gps_program.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GPS_stdStatusReadNMEASentence
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorReceiveByte
+<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_StdErrorReceiveByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_stdStatusGetLocation
 </UL>
 
 <P><STRONG><a name="[d8]"></a>getOscClk</STRONG> (Thumb, 182 bytes, Stack size 0 bytes, system_tm4c123.o(.text), UNUSED)
