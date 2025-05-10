@@ -1,0 +1,13 @@
+.\clcd_program.o: CLCD_program.c
+.\clcd_program.o: GPIO_interface.h
+.\clcd_program.o: STD_TYPES.h
+.\clcd_program.o: BIT_MATH.h
+.\clcd_program.o: GPIO_Private.h
+.\clcd_program.o: GPIO_interface.h
+.\clcd_program.o: GPIO_Config.h
+.\clcd_program.o: CLCD_interface.h
+.\clcd_program.o: CLCD_config.h
+.\clcd_program.o: CLCD_private.h
+.\clcd_program.o: SYSTICK_interface.h
+.\clcd_program.o: SYSTICK_private.h
+.\clcd_program.o: SYSTICK_config.h

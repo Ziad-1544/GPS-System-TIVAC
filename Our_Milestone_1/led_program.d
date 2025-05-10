@@ -1,0 +1,13 @@
+.\led_program.o: LED_program.c
+.\led_program.o: LED_interface.h
+.\led_program.o: STD_TYPES.h
+.\led_program.o: LED_private.h
+.\led_program.o: LED_config.h
+.\led_program.o: GPIO_Interface.h
+.\led_program.o: BIT_MATH.h
+.\led_program.o: GPIO_Private.h
+.\led_program.o: GPIO_interface.h
+.\led_program.o: GPIO_Config.h
+.\led_program.o: SYSTICK_interface.h
+.\led_program.o: SYSTICK_private.h
+.\led_program.o: SYSTICK_config.h

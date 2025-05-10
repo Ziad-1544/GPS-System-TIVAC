@@ -1,0 +1,13 @@
+.\sw_program.o: SW_program.c
+.\sw_program.o: SW_interface.h
+.\sw_program.o: GPIO_Interface.h
+.\sw_program.o: STD_TYPES.h
+.\sw_program.o: BIT_MATH.h
+.\sw_program.o: GPIO_Private.h
+.\sw_program.o: GPIO_interface.h
+.\sw_program.o: GPIO_Config.h
+.\sw_program.o: SW_private.h
+.\sw_program.o: SW_config.h
+.\sw_program.o: SYSTICK_interface.h
+.\sw_program.o: SYSTICK_private.h
+.\sw_program.o: SYSTICK_config.h
