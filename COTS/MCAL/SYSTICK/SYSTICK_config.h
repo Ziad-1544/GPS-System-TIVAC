@@ -1,11 +1,11 @@
 ////////////////////////////////////////////////////
-///////      Ain Shams University         /////////
-//////     Intro To Embedded Project     /////////
-/////           Layer:  MCAL            /////////
-////                SYSTICK            /////////
-////                Version:1.0       /////////
-////         DATE:   4-7-2025        /////////
-//         AUTHOR: Ziad Kassem      /////////
+////////      Ain Shams University        /////////
+///////     Intro To Embedded Project    /////////
+//////           Layer:  MCAL           /////////
+/////                SYSTICK           /////////
+////                Version:3.0       /////////
+///        DATE:   5-10-2025         /////////
+//        AUTHOR: Ziad Kassem       /////////
 ////////////////////////////////////////////
 #ifndef STK_CONFIG_H_
 #define STK_CONFIG_H_

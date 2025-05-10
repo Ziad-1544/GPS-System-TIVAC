@@ -1,16 +1,15 @@
 ////////////////////////////////////////////////////
-///////      Ain Shams University         /////////
-//////     Intro To Embedded Project     /////////
-/////           Layer:  MCAL            /////////
-////                SYSTICK            /////////
-////                Version:1.0       /////////
-////         DATE:   4-7-2025        /////////
-//         AUTHOR: Ziad Kassem      /////////
+////////      Ain Shams University        /////////
+///////     Intro To Embedded Project    /////////
+//////           Layer:  MCAL           /////////
+/////                SYSTICK           /////////
+////                Version:3.0       /////////
+///        DATE:   5-10-2025         /////////
+//        AUTHOR: Ziad Kassem       /////////
 ////////////////////////////////////////////
 
 #ifndef STK_INTERFACE_H_
 #define STK_INTERFACE_H_
-
 #include "../../LIB/STD/STD_TYPES.h"
 #include "SYSTICK_private.h"
 #include "SYSTICK_config.h"

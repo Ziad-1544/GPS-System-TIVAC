@@ -1,18 +1,17 @@
 /////////////////////////////////////////////////
 //////////   Author: Mustafa ElSherif ///////////
-//////////   Date: 24/4/2025          ///////////
-//////////   Version: 1.0             ///////////
+//////////   Date: 5.10.2025          ///////////
+//////////   Version: 3.0             ///////////
 //////////   Description: EEPROM      ///////////
 //////////   Program file             ///////////
 //////////   For TivaC "TM4C123"      ///////////
 /////////////////////////////////////////////////
 
 
-#include "../../LIB/BITMATH/BIT_MATH.h"
 #include "../../LIB/STD/STD_TYPES.h"
-
-#include "GPIO_interface.h" 
-#include "SYSTICK_interface.h"
+#include "../../LIB/BITMATH/BIT_MATH.h"
+#include "../../MCAL/GPIO/GPIO_interface.h"
+#include "../../MCAL/SYSTICK/SYSTICK_interface.h"
 #include "EEPROM_interface.h"
 #include "EEPROM_private.h"
 #include "EEPROM_config.h"

@@ -12,10 +12,11 @@
 #define SW_INTERFACE_H
 
 
-#include "GPIO_Interface.h"
+#include "../../MCAL/GPIO/GPIO_interface.h" 
+#include "../../LIB/STD/STD_TYPES.h"
 #include "SW_private.h"
 #include "SW_config.h"
-#include "STD_TYPES.h"
+
 
 
 #define Internal_SW1    PIN4

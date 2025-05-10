@@ -1,11 +1,11 @@
 ////////////////////////////////////////////////////
-///////      Ain Shams University         /////////
-//////     Intro To Embedded Project     /////////
-/////           Layer:  MCAL            /////////
-////                SYSTICK            /////////
-////                Version:1.0       /////////
-////         DATE:   4-7-2025        /////////
-//         AUTHOR: Ziad Kassem      /////////
+////////      Ain Shams University        /////////
+///////     Intro To Embedded Project    /////////
+//////           Layer:  MCAL           /////////
+/////                SYSTICK           /////////
+////                Version:3.0       /////////
+///        DATE:   5-10-2025         /////////
+//        AUTHOR: Ziad Kassem       /////////
 ////////////////////////////////////////////
 #ifndef STK_PRIVATE_H_
 #define STK_PRIVATE_H_
@@ -34,10 +34,9 @@ typedef struct STK_RegDef_t
 
 #define SINGLE_INTERVAL 0
 #define PERIOD_INTERVAL 1
-#define SYS_CLK 16000000 
+#define SYS_CLK 80000000 
 #define Enable_SYSTICK 1
 #define No_Of_Tick_To_Delay_1ms 48000
 #define Counter_flag 0x00010000
 
 #endif 
-

@@ -8,11 +8,12 @@
 //         AUTHOR: Randa Ayman      /////////
 ////////////////////////////////////////////
 
+#include "../../MCAL/GPIO/GPIO_interface.h" 
+#include "../../MCAL/SYSTICK/SYSTICK_interface.h"
 #include "SW_interface.h"
 #include "SW_private.h"
 #include "SW_config.h"
-#include "SYSTICK_interface.h"
-#include "GPIO_Interface.h"
+
 
 
 // =========================================================================== Internal Switch Support ==============================================

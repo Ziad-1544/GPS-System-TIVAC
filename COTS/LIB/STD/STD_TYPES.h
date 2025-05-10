@@ -3,8 +3,8 @@
 ///////     Intro To Embedded Project     /////////
 //////           Layer:  LIB             /////////
 /////        Standard Types (STD)       /////////
-////         DATE:   16-3-2025         /////////
-///         version:   1.2            /////////
+////         DATE:   10-5-2025         /////////
+///         version:   3.0            /////////
 //         AUTHOR: Jessica Samuel    /////////
 ///////////////////////////////////////////// 
 #ifndef STD_TYPES_H_
@@ -29,6 +29,7 @@ typedef enum {
 } STD_ERROR;
 
 #define NULL ((void*)0)
+
 
 #endif
 

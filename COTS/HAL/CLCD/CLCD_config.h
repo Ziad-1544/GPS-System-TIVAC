@@ -8,27 +8,25 @@
 //         AUTHOR: Randa Ayman      /////////
 ////////////////////////////////////////////
 
-#ifndef LCD_INTERFACE_h_
-#define LCD_INTERFACE_h_
+#ifndef CLCD_CONFIG_h_
+#define CLCD_CONFIG_h_
 
-#include "CLCD_config.h"
 #include "CLCD_private.h"
-#include "../../MCAL/GPIO/GPIO_interface.h" 
+
+//Options: PortA PortB PortC PortD PortE PortF
+#define DATA_PORT   PortB
+#define CTRL_PORT   PortA
+
+//Options: PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7
+#define RS          PIN2
+#define RW          PIN3
+#define ENA         PIN4
+
+//options: CURSOR_OFF  CURSOR_ON
+#define CURSOR_MODE CURSOR_OFF
 
 
-
-
-STD_ERROR CLCD_StdErrorDataPinsInit (void);
-
-void CLCD_VoidDataSendString(u8 *Copy_u8Str);
-
-void CLCD_VoidDataSetCursor(u8 Copy_u8LineNum, u8 Copy_u8Location);
-
-void CLCD_VoidClearDisplay(void);
-
-void CLCD_VoidSendNum(u16 Copy_u16Num);
-
-#define LINE_1   0
-#define LINE_2   1
+//#define RS  0x01  
+//#define EN  0x04 
 
 #endif
