@@ -600,6 +600,26 @@
               <FileType>1</FileType>
               <FilePath>.\UART_program.c</FilePath>
             </File>
+            <File>
+              <FileName>INT_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\INT_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>INT_interface.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\INT_interface.h</FilePath>
+            </File>
+            <File>
+              <FileName>INT_private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\INT_private.h</FilePath>
+            </File>
+            <File>
+              <FileName>INT_program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\INT_program.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

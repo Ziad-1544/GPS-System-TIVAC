@@ -57,14 +57,15 @@ int main (){
     Local_uart2configuration.BaudRate = 9600; 
 
     PeripheralsInit();
+    GPIO_StdErrorWritePin(PortD,PIN0,PIN_LOW);
     CLCD_VoidClearDisplay();
     CLCD_VoidDataSetCursor(LINE_1,0);
     CLCD_VoidDataSendString("Welcome Back..");
     CLCD_VoidDataSetCursor(LINE_2,0);
     CLCD_VoidDataSendString("Press To start");
     Systick_StdErrorDelayIn_ms(2000);
-
-    //INT_voidFunc(PortC,PIN5,&TimeVisitedReport);     
+    
+    INT_voidFunc(PortE,PIN3,&TimeVisitedReport);     
 
     while(1){
         if(SW_u8ExternalSWIsPressed(PortC,PIN6)){
@@ -73,7 +74,7 @@ int main (){
            NearestLoc.name[sizeof(NearestLoc.name)-1] = '\0'; // Ensure null termination
            NearestLoc.distance=DBL_MAX;
 
-           //GPIO_StdErrorWritePin(PortD,PIN0,PIN_LOW);
+           GPIO_StdErrorWritePin(PortD,PIN0,PIN_LOW);
    
            TurnOffAllLeds();
            //GPIO_StdErrorWritePin(PortD,PIN0,PIN_HIGH);
@@ -96,7 +97,7 @@ int main (){
                }
            }
            ConvertUTCtoLocalTime(TimeUTC,TimeNow);
-           //EEPROM_TimesVisitedIncrement(EEPROM_Addresses);
+           EEPROM_TimesVisitedIncrement(EEPROM_Addresses);
            // CLCD Prints Current Time
            CLCD_VoidClearDisplay();
            CLCD_VoidDataSetCursor(LINE_1, 0);
@@ -105,7 +106,7 @@ int main (){
            CLCD_VoidDataSendString(TimeNow);
            Systick_StdErrorDelayIn_ms(4000);
            // CLCD Prints Nearest loc & Distance in between 
-           //BuzzerTrigger();
+           BuzzerTrigger();
            CLCD_VoidClearDisplay();
            CLCD_VoidDataSetCursor(LINE_1, 0);
            CLCD_VoidDataSendString(NearestLoc.name);
@@ -115,11 +116,21 @@ int main (){
            Systick_StdErrorDelayIn_ms(4000);
    
            // CLCD Prints How many times did i visit this place before
-           // TimesVisited = EEPROM_u32ReadData(EEPROM_Addresses);
-           //CLCD_VoidClearDisplay();
-           // CLCD_VoidDataSetCursor(LINE_1, 0);
-           // CLCD_VoidDataSendString("Times Visited: ");
-           // CLCD_VoidSendNum(TimesVisited);
+           TimesVisited = EEPROM_u32ReadData(EEPROM_Addresses);
+           CLCD_VoidClearDisplay();
+           CLCD_VoidDataSetCursor(LINE_1, 0);
+           CLCD_VoidDataSendString("Times Visited: ");
+           CLCD_VoidSendNum(TimesVisited);
+           if (TimesVisited > 0){
+                CLCD_VoidDataSetCursor(LINE_2, 0);
+                CLCD_VoidDataSendString("Missed You..");
+           }else
+           {
+                CLCD_VoidDataSetCursor(LINE_2, 0);
+                CLCD_VoidDataSendString("New Place..Nice");
+           }
+           
+           
    
            //LED Handling For Distance Ranges
            if (NearestLoc.distance < GREEN_LED_THRESHOLD){ LED_voidTurnOnLed(PortA, PIN7); }
@@ -130,29 +141,32 @@ int main (){
 }
 
 void TimeVisitedReport(void){
-CLCD_VoidClearDisplay();
-CLCD_VoidDataSetCursor(LINE_1, 0);
-CLCD_VoidDataSendString("Times Visited:");
-
-for(i = 0; i < 14; i++) {
-    // Get visit count for this location from EEPROM
-    visits = EEPROM_u32ReadData(i);
-    
     CLCD_VoidClearDisplay();
     CLCD_VoidDataSetCursor(LINE_1, 0);
-    CLCD_VoidDataSendString(Database[i].name);
-    CLCD_VoidDataSetCursor(LINE_2, 0);
-    CLCD_VoidDataSendString("Visits: ");
-    CLCD_VoidSendNum(visits);
-    
-    // Wait for user to read before showing next location
-    Systick_StdErrorDelayIn_ms(2000);
-}
+    CLCD_VoidDataSendString("Times Visited:");
 
-CLCD_VoidClearDisplay();
-CLCD_VoidDataSetCursor(LINE_1, 0);
-CLCD_VoidDataSendString("Report Done");
-Systick_StdErrorDelayIn_ms(1000);
+    for(i = 0; i < 14; i++) {
+        // Get visit count for this location from EEPROM
+        visits = EEPROM_u32ReadData(i);
+
+        CLCD_VoidClearDisplay();
+        CLCD_VoidDataSetCursor(LINE_1, 0);
+        CLCD_VoidDataSendString(Database[i].name);
+        CLCD_VoidDataSetCursor(LINE_2, 0);
+        CLCD_VoidDataSendString("Visits: ");
+        CLCD_VoidSendNum(visits);
+
+        // Wait for user to read before showing next location
+        Systick_StdErrorDelayIn_ms(2000);
+    }
+
+    CLCD_VoidClearDisplay();
+    CLCD_VoidDataSetCursor(LINE_1, 0);
+    CLCD_VoidDataSendString("Report Done");
+    Systick_StdErrorDelayIn_ms(3000);
+    CLCD_VoidClearDisplay();
+    CLCD_VoidDataSetCursor(LINE_1,0);
+    CLCD_VoidDataSendString("Press To start..");
 }
 
 // int main(){

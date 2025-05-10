@@ -27,10 +27,10 @@ void PeripheralsInit(void){
 
     //Switch Initialization
     SW_StdErrorInitExternal(PortC, PIN6);
-    //SW_StdErrorInitExternal(PortC, PIN5);
+    SW_StdErrorInitExternal(PortE, PIN3);
 
     //Interrupt Switch For the Report
-    //INT_voidPORTC_Enable(PIN5);
+    INT_voidPORTE_Enable(PIN3);
 
     //LED Initialization
     LED_voidInitExternalLed(PortA, PIN5); //RED LED
@@ -53,44 +53,20 @@ void PeripheralsInit(void){
 }
 
 void BuzzerTrigger(void){
-    // Imperial March (Star Wars theme) ringtone
+    
     u8 i;
-    // First phrase
+    
     for(i = 0; i < 2; i++) {
         // G note
         GPIO_StdErrorWritePin(PortD, PIN0, PIN_HIGH);
         Systick_StdErrorDelayIn_ms(300);
         GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
         Systick_StdErrorDelayIn_ms(100);
-        
-        // G repeat
-        GPIO_StdErrorWritePin(PortD, PIN0, PIN_HIGH);
-        Systick_StdErrorDelayIn_ms(300);
-        GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
-        Systick_StdErrorDelayIn_ms(100);
-        
-        // G repeat
-        GPIO_StdErrorWritePin(PortD, PIN0, PIN_HIGH);
-        Systick_StdErrorDelayIn_ms(300);
-        GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
-        Systick_StdErrorDelayIn_ms(100);
     }
-    
-    // Second phrase - lower note
     GPIO_StdErrorWritePin(PortD, PIN0, PIN_HIGH);
-    Systick_StdErrorDelayIn_ms(200);
+    Systick_StdErrorDelayIn_ms(1000);
     GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
-    Systick_StdErrorDelayIn_ms(50);
-    
-    // Higher note
-    GPIO_StdErrorWritePin(PortD, PIN0, PIN_HIGH);
-    Systick_StdErrorDelayIn_ms(400);
-    GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
-    Systick_StdErrorDelayIn_ms(100);
-    
-    // G finale
-    GPIO_StdErrorWritePin(PortD, PIN0, PIN_HIGH);
-    Systick_StdErrorDelayIn_ms(600);
+    Systick_StdErrorDelayIn_ms(1500);
     GPIO_StdErrorWritePin(PortD, PIN0, PIN_LOW);
 }
 
