@@ -185,12 +185,12 @@ This GPS System on Tiva C successfully demonstrates real-time location tracking 
 
 | Name           | Member Photo                                                                 |
 |----------------|--------------------------------------------------------------------------------|
-| Ziad Kassem    | <img src="https://avatars.githubusercontent.com/u/170097123?v=4" width="80"/> |
-| Randa Ayman    | <img src="https://avatars.githubusercontent.com/u/177648687?v=4" width="80"/> |
-| Hussein Bahaa  | <img src="https://avatars.githubusercontent.com/u/201500976?v=4" width="80"/> |
-| Mustafa Tamer  | <img src="https://avatars.githubusercontent.com/u/168356659?v=4" width="80"/> |
-| Jessica Samuel | <img src="https://avatars.githubusercontent.com/u/201390497?v=4" width="80"/> |
-| Ahmad Ezz-Eldeen | <img src="https://avatars.githubusercontent.com/u/153951438?v=4" width="80"/> |
+| Ziad Kassem    | <img src="https://avatars.githubusercontent.com/u/170097123?v=4" width="200"/> |
+| Randa Ayman    | <img src="https://avatars.githubusercontent.com/u/177648687?v=4" width="200"/> |
+| Hussein Bahaa  | <img src="https://avatars.githubusercontent.com/u/201500976?v=4" width="200"/> |
+| Mustafa Tamer  | <img src="https://avatars.githubusercontent.com/u/168356659?v=4" width="200"/> |
+| Jessica Samuel | <img src="https://avatars.githubusercontent.com/u/201390497?v=4" width="200"/> |
+| Ahmad Ezz-Eldeen | <img src="https://avatars.githubusercontent.com/u/153951438?v=4" width="200"/> |
 
 
 
