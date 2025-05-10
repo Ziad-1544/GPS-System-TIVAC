@@ -20,3 +20,8 @@
 
 📁 Branch Files:
 
+| 🧩 Component         | 📂 Description                                | 🔗 Link |
+|----------------------|-----------------------------------------------|--------|
+| UART Driver          | Serial communication implementation           | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/hussien/UART) |
+| README Contributions | Defined README format for all participants    
+
