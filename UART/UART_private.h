@@ -3,8 +3,8 @@
 ///////       Intro To Embedded Project                /////////
 //////            Layer:  MCAL                        /////////
 /////                UART                            /////////
-////            Version: 2                         /////////
-///          DATE:   4-30-2025                     /////////
+////            Version:3.0                         /////////
+///          DATE:   5-10-2025                     /////////
 //        AUTHOR: Ahmad Ayman , Hussein Bahaa     /////////
 //////////////////////////////////////////////////////////
 
@@ -43,8 +43,8 @@
 
 
 
-#define UART_RCC_ENABLE_BASE_ADDRESS       0x400FE618 //UART clock enable register
-#define UART_PRUART_BASE_ADDRESS           0x400FEA18
+#define UART_RCC_ENABLE_BASE_ADDRESS        0x400FE618 //UART clock enable register 0x400FE618
+#define UART_PRUART_BASE_ADDRESS            0x400FEA18
 
 
 #define UART0_BASE_ADDRESS                      0x4000C000
