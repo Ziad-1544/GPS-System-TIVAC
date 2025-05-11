@@ -1,4 +1,4 @@
-🛰️ Real-Time GPS Tracking System on Tiva C (TM4C123GXL) 📍
+🛰️ Real-Time GPS Tracking System on Tiva C (TM4C123GH6PM) 📍
 ---
 📌 Project Overview:
 ---
