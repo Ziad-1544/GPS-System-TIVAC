@@ -2,7 +2,7 @@
 
 🧑‍🔧 Role: Embedded Systems Developer & Documentation Specialist.
 
-🌿 Branches: CLCD-LED-Switches-driver, Documentation-format.
+🌿 Branches: CLCD driver, LED driver, Switches driver, Documentation.
 
 📌 Key Contributions:
 
