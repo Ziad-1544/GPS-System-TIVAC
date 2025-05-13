@@ -175,6 +175,7 @@ int main (){
                                 CLCD_VoidDataSendString("Choose Another");
                                 CLCD_VoidDataSetCursor(LINE_2,0);
                                 CLCD_VoidDataSendString("Place");
+                                Systick_StdErrorDelayIn_ms(1000);
                                 break;
                             }
                        }
