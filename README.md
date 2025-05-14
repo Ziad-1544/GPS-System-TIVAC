@@ -28,6 +28,6 @@
 |----------------------------|------------------------------------|--------|
 | EEPROM Driver              | External EEPROM read/write         | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/EEPROM) |
 | GPIO Interrupt Driver      | External interrupt logic           | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/GPIO_INT) |
-| Milestone 3 – EEPROM       | Feature implementation with EEPROM | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Milestone_4_EEPROM) |
+| Milestone 3 – EEPROM       | Feature implementation with EEPROM | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Milestone_3_EEPROM) |
 | Milestone 4 – Interrupt    | Feature implementation with INTs   | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Milestone_5_Interrupt) |
 | Phase 1 Compilation Fixes  | Fixes for build errors in phase 1  | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Phase_1_Compilation_errors) |
