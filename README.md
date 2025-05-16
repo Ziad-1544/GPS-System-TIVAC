@@ -46,7 +46,7 @@ This project implements a real-time GPS tracking system using the Tiva C (TM4C12
 | Milestone 3 (EEPROM) | 📦 Location saving feature                  | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Milestone_4_EEPROM) |
 | Milestone 4 (INT)    | 🚦 Interrupt-driven location actions        | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/mustafa/Milestone_5_Interrupt) |
 | Coordinates DataBase | 📌 Parsing and managing coordinate data     | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/tree/ziad/Coordinates) |
-| Documentation        | 📚 Project documentation and README formats | [Open]([https://github.com/Ziad-1544/GPS-System-TIVAC/blob/main/GPS_Project_Documentation.pdf](https://github.com/Ziad-1544/GPS-System-TIVAC/blob/master/GPS_Project_Documentation.pdf)) |
+| Documentation        | 📚 Project documentation and README formats | [Open](https://github.com/Ziad-1544/GPS-System-TIVAC/blob/master/GPS_Project_Documentation.pdf)) |
 
 ---
 🛠️ Implementation Details:
